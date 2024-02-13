@@ -15,9 +15,16 @@ import { IoMenu } from "react-icons/io5";
 export default function MainNav({ items }: { items: NavItem[] }) {
     return (
         <div className="container flex items-center justify-between h-28">
-            <Image src="/assets/logo.png" alt="Logo" width={80} height={80} />
+            <Link href="/">
+                <Image
+                    src="/assets/logo.png"
+                    alt="Logo"
+                    width={80}
+                    height={80}
+                />
+            </Link>
 
-            <div className="hidden sm:flex items-center gap-6">
+            <div className="hidden sm:flex items-center gap-2">
                 {items.map((item, index) => (
                     <Link
                         key={index}
