@@ -1,4 +1,4 @@
-import MainNav from "./nav/main-nav";
+import MainNav from "./main-nav";
 import Config from "@/config/site";
 
 export default function Header() {
