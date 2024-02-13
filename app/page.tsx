@@ -1,7 +1,7 @@
-import Image from "next/image";
-
 export default function Home() {
     return (
-        <h1>Test</h1>
+        <main className="w-screen h-screen flex items-center justify-center">
+            Main Content (Also, Ismail = Gay Boy)
+        </main>
     );
 }

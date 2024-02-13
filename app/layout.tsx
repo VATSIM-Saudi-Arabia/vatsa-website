@@ -1,12 +1,16 @@
-import type { Metadata } from "next";
-import { Mulish } from "next/font/google";
 import "./globals.css";
+
+import type { Metadata } from "next";
+
+import { Mulish } from "next/font/google";
+import Config from "@/config/site";
+import Header from "@/components/header";
 
 const mulish = Mulish({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-    title: "VATSIM Saudi Arabia",
-    description: "Saudi Arabian VATSIM vACC",
+    title: Config.title,
+    description: Config.description,
 };
 
 export default function RootLayout({
@@ -16,7 +20,10 @@ export default function RootLayout({
 }>) {
     return (
         <html lang="en">
-            <body className={mulish.className}>{children}</body>
+            <body className={mulish.className}>
+                <Header />
+                {children}
+            </body>
         </html>
     );
 }
