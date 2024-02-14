@@ -2,7 +2,7 @@ export default function Home() {
     return (
         <main className="flex flex-col">
             <div className="h-[80vh] bg-[url('/assets/background.png')] bg-cover bg-no-repeat bg-center">
-                <div className="h-full bg-black/50">
+                <div className="h-full bg-black/30">
                     <div className="container flex flex-col justify-center h-full">
                         <div className="text-6xl">
                             <h1>Welcome to </h1>
