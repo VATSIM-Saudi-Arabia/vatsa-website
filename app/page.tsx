@@ -21,7 +21,7 @@ export default function Home() {
             </div>
 
             <div className="flex items-center justify-center bg-[url('/assets/background.png')] bg-cover">
-                Second content
+                Second content (Also, Ismail = Gay Boy)
             </div>
         </main>
     );
