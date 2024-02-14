@@ -14,9 +14,9 @@
         --popover-foreground: 222.2 84% 4.9%;
 
         --primary: 360, 100%, 100%;
-        --primary-foreground: 222.2 47.4% 11.2%;
+        --primary-foreground: 240 5.9% 10%;
 
-        --secondary: 222.2 47.4% 11.2%;
+        --secondary: 240 5.9% 10%;
         --secondary-foreground: 360, 100%, 100%;
 
         --muted: 210 40% 96.1%;
@@ -73,4 +73,12 @@
     body {
         @apply bg-background text-foreground;
     }
+}
+
+.custom-shape-divider-bottom-1707908872 svg {
+    position: relative;
+    display: block;
+    width: calc(100% + 1.3px);
+    height: 70px;
+    transform: rotateY(180deg);
 }

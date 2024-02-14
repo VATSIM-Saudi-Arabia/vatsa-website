@@ -21,6 +21,13 @@ const siteConfig: SiteConfig = {
             href: "/",
         },
     ],
+    subheadings: [
+        "Watching the skies over the vast deserts of the Kingdom of Saudi Arabia.",
+        "Experience the thrill of managing Saudi Arabian airspace with VATSIM Saudi Arabia.",
+        "Begin your journey as an air traffic controller in VATSIM Saudi Arabia today.",
+        "We are the largest airspace in the Middle East Region.",
+        "We are VATSIM Saudi Arabia.",
+    ],
 };
 
 export default siteConfig;
