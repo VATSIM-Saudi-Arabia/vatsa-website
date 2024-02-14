@@ -29,7 +29,7 @@ export default function MainNav({ items }: { items: NavItem[] }) {
                     <Link
                         key={index}
                         href={item.href}
-                        className={buttonVariants({ variant: "outline" })}
+                        className={buttonVariants({ variant: "link" })}
                     >
                         {item.title}
                     </Link>
