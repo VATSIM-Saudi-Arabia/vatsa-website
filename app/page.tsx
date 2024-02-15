@@ -27,7 +27,7 @@ async function getEvents(): Promise<EventResponse> {
 }
 
 export default async function Home() {
-    const res = await getEvents();
+    const events = (await getEvents())?.data;
 
     return (
         <main className="flex flex-col">
@@ -81,22 +81,28 @@ export default async function Home() {
                 <div className="container flex flex-col items-center gap-10 py-8">
                     <h2 className="text-4xl">Upcoming Events</h2>
                     <div className="flex flex-wrap justify-center gap-8">
-                        {res.data.map((event) => (
-                            <EventCard
-                                key={event.id}
-                                link={event.link}
-                                title={event.name}
-                                date={new Date(
-                                    event.start_time
-                                ).toLocaleDateString("en-US", {
-                                    year: "numeric",
-                                    month: "long",
-                                    day: "numeric",
-                                })}
-                                type={event.type}
-                                image_url={event.banner}
-                            />
-                        ))}
+                        {events ? (
+                            events.map((event) => (
+                                <EventCard
+                                    key={event.id}
+                                    link={event.link}
+                                    title={event.name}
+                                    date={new Date(
+                                        event.start_time
+                                    ).toLocaleDateString("en-US", {
+                                        year: "numeric",
+                                        month: "long",
+                                        day: "numeric",
+                                    })}
+                                    type={event.type}
+                                    image_url={event.banner}
+                                />
+                            ))
+                        ) : (
+                            <h1 className="text-lg">
+                                No upcoming events found.
+                            </h1>
+                        )}
                     </div>
                 </div>
             </section>
