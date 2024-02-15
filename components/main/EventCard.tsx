@@ -11,30 +11,30 @@ import {
 import Image from "next/image";
 
 export default function EventCard({
+    link,
     title,
+    type,
     date,
     image_url,
-    description,
 }: Event) {
     return (
-        <Card className="dark max-w-sm">
-            <CardHeader>
-                <CardTitle>{title}</CardTitle>
-                <CardDescription>{date}</CardDescription>
-            </CardHeader>
-            <CardContent>
-                <Image
-                    src={image_url}
-                    alt="Card Image"
-                    width={0}
-                    height={0}
-                    sizes="100vh"
-                    className="w-full h-auto"
-                />
-            </CardContent>
-            <CardFooter>
-                <p>{description}</p>
-            </CardFooter>
-        </Card>
+        <a href={link} target="_blank" rel="noreferrer noopener">
+            <Card className="dark max-w-sm overflow-hidden">
+                <CardContent className="p-0">
+                    <Image
+                        src={image_url}
+                        alt="Card Image"
+                        width={0}
+                        height={0}
+                        sizes="100vh"
+                        className="w-full h-auto"
+                    />
+                </CardContent>
+                <CardHeader>
+                    <CardTitle>{title}</CardTitle>
+                    <CardDescription>{type + " • " + date}</CardDescription>
+                </CardHeader>
+            </Card>
+        </a>
     );
 }

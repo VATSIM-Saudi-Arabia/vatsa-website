@@ -16,6 +16,10 @@ const siteConfig: SiteConfig = {
             href: "/",
         },
         {
+            title: "Events",
+            href: "/#events",
+        },
+        {
             title: "Pilots",
             href: "/",
         },
