@@ -21,9 +21,12 @@ export default function RootLayout({
 }>) {
     return (
         <html lang="en">
-            <body className={cn("text-white", mulish.className)}>
+            <body className={cn("dark", mulish.className)}>
                 <Header />
                 {children}
+                <footer className="flex justify-center items-center h-40 w-full">
+                    made by wookie :)
+                </footer>
             </body>
         </html>
     );

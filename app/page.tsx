@@ -1,10 +1,11 @@
+import EventCard from "@/components/main/EventCard";
 import Typer from "@/components/main/Typer";
 import Config from "@/config/site";
 
 export default function Home() {
     return (
         <main className="flex flex-col">
-            <div className="h-[80vh] bg-[url('/assets/background.png')] bg-cover bg-no-repeat bg-center">
+            <section className="h-[80vh] bg-[url('/assets/background.png')] bg-cover bg-no-repeat bg-center">
                 <div className="h-full bg-black/30">
                     <div className="container flex flex-col justify-center h-full">
                         <div className="text-4xl sm:text-6xl">
@@ -46,11 +47,24 @@ export default function Home() {
                         </div>
                     </div>
                 </div>
-            </div>
+            </section>
 
-            <div className="h-[400px] flex items-center justify-center bg-green-900">
-                made by wookie :)
-            </div>
+            <section className="bg-green-900">
+                <div className="container flex flex-col items-center gap-10 py-8">
+                    <h2 className="text-4xl">Upcoming Events</h2>
+                    <div className="flex flex-wrap justify-center gap-8">
+                        {Array.from({ length: 10 }).map((_, index) => (
+                            <EventCard
+                                key={index}
+                                title="Cross the Land"
+                                date="Feburary 8th 2022"
+                                image_url="/assets/background.png"
+                                description="Join us for a crazy westbout event via Cross the Land Westbound happening on the 8th of Feburary 2022."
+                            />
+                        ))}
+                    </div>
+                </div>
+            </section>
         </main>
     );
 }

@@ -10,7 +10,7 @@ import { buttonVariants } from "@/components/ui/button";
 import Image from "next/image";
 import Link from "next/link";
 
-import { IoMenu } from "react-icons/io5";
+import { Menu } from "lucide-react";
 
 export default function MainNav({ items }: { items: NavItem[] }) {
     return (
@@ -40,7 +40,7 @@ export default function MainNav({ items }: { items: NavItem[] }) {
                 <DropdownMenu>
                     <DropdownMenuTrigger asChild>
                         <button>
-                            <IoMenu size={30} />
+                            <Menu size={30} />
                         </button>
                     </DropdownMenuTrigger>
                     <DropdownMenuContent>
