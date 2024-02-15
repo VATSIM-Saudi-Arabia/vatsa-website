@@ -4,7 +4,6 @@ import {
     Card,
     CardContent,
     CardDescription,
-    CardFooter,
     CardHeader,
     CardTitle,
 } from "../ui/card";
@@ -18,7 +17,12 @@ export default function EventCard({
     image_url,
 }: Event) {
     return (
-        <a href={link} target="_blank" rel="noreferrer noopener" className="hover:opacity-80 transition-opacity ease-in-out">
+        <a
+            href={link}
+            target="_blank"
+            rel="noreferrer noopener"
+            className="hover:opacity-80 transition-opacity ease-in-out"
+        >
             <Card className="dark max-w-sm overflow-hidden">
                 <CardContent className="p-0">
                     <Image
