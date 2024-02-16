@@ -1,34 +1,14 @@
-import type { EventResponse } from "@/types/api";
-
-import EventCard from "@/components/main/EventCard";
-import Typer from "@/components/main/Typer";
+import Typer from "@/components/Typer";
+import Events from "@/components/Events";
 import Config from "@/config/site";
+import Divider from "@/components/ui/divider";
+import { Separator } from "@/components/ui/separator";
+import { buttonVariants } from "@/components/ui/button";
+import { cn } from "@/lib/utils";
 
-// Fetch events from the VATSIM API
-async function getEvents(): Promise<EventResponse> {
-    const res = await fetch(
-        "https://my.vatsim.net/api/v2/events/view/division/mena",
-        {
-            headers: {
-                Accept: "application/json",
-            },
-        }
-    );
-
-    if (!res.ok) throw new Error("Failed to fetch events");
-
-    // Filter those events that includes an airport that is in Saudi Arabia
-    var response: EventResponse = await res.json();
-    response.data = response.data.filter((event) =>
-        event.airports.some((event) => event.icao.startsWith("OE"))
-    );
-
-    return response;
-}
+import Discord from "@/public/assets/icons/discord.svg";
 
 export default async function Home() {
-    const events = (await getEvents())?.data;
-
     return (
         <main className="flex flex-col">
             <section className="h-[80vh] bg-[url('/assets/background.png')] bg-cover bg-no-repeat bg-center">
@@ -50,61 +30,49 @@ export default async function Home() {
 
                     <div className="relative text-green-900">
                         <div className="absolute bottom-0 left-0 h-16 w-full overflow-hidden leading-0 rotate-180">
-                            <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                viewBox="0 0 1200 120"
-                                preserveAspectRatio="none"
-                                className="absolute bottom-0 h-16 w-[calc(100%+1.3px)] opacity-50"
-                            >
-                                <path
-                                    d="M1200 120L0 16.48 0 0 1200 0 1200 120z"
-                                    fill="currentColor"
-                                ></path>
-                            </svg>
-                            <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                viewBox="0 0 1200 120"
-                                preserveAspectRatio="none"
-                                className="absolute bottom-0 h-16 w-[calc(100%+1.3px)] [transform:rotateY(180deg)]"
-                            >
-                                <path
-                                    d="M1200 120L0 16.48 0 0 1200 0 1200 120z"
-                                    fill="currentColor"
-                                ></path>
-                            </svg>
+                            <Divider className="absolute bottom-0" />
                         </div>
                     </div>
                 </div>
             </section>
 
             <section className="bg-green-900">
-                <div className="container flex flex-col items-center gap-10 py-8">
+                <div className="container flex flex-col items-center gap-8 py-10">
                     <h2 className="text-4xl">Upcoming Events</h2>
-                    <div className="flex flex-wrap justify-center gap-8">
-                        {events ? (
-                            events.map((event) => (
-                                <EventCard
-                                    key={event.id}
-                                    link={event.link}
-                                    title={event.name}
-                                    date={new Date(
-                                        event.start_time
-                                    ).toLocaleDateString("en-US", {
-                                        year: "numeric",
-                                        month: "long",
-                                        day: "numeric",
-                                    })}
-                                    type={event.type}
-                                    image_url={event.banner}
-                                />
-                            ))
-                        ) : (
-                            <h1 className="text-lg">
-                                No upcoming events found.
-                            </h1>
-                        )}
+                    <Events />
+                </div>
+            </section>
+
+            <section className="bg-background">
+                <div className="text-green-900">
+                    <div className="block left-0 h-16 w-full overflow-hidden leading-0">
+                        <Divider className="absolute" />
                     </div>
                 </div>
+
+                <div className="container flex flex-col items-center gap-6 py-10">
+                    <h1 className="text-4xl">Join us today!</h1>
+                    <p>
+                        Join our Discord server and be a part of controlling the
+                        airspaces over the Kingdom of Saudi Arabia
+                    </p>
+                    <a
+                        href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+                        target="_blank"
+                        rel="noreferrer noopener"
+                        className={cn(
+                            buttonVariants({ variant: "secondary" }),
+                            "bg-discord"
+                        )}
+                    >
+                        <div className="flex items-center gap-2">
+                            <Discord fill="currentColor" className="w-4" />
+                            Join our Discord
+                        </div>
+                    </a>
+                </div>
+
+                <Separator className="container" />
             </section>
         </main>
     );

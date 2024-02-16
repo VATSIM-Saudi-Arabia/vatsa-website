@@ -53,6 +53,7 @@ const config = {
                     foreground: "hsl(var(--card-foreground))",
                 },
                 sagreen: "#4f7c22",
+                discord: "#7289da",
             },
             borderRadius: {
                 lg: "var(--radius)",
