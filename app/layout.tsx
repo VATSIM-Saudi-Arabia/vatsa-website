@@ -2,10 +2,10 @@ import "./globals.css";
 
 import type { Metadata } from "next";
 
-import { cn } from "@/lib/utils";
-import { Mulish } from "next/font/google";
 import Config from "@/config/site";
 import Header from "@/components/header/main-header";
+import { Mulish } from "next/font/google";
+import { cn } from "@/lib/utils";
 
 const mulish = Mulish({ subsets: ["latin"] });
 

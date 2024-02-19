@@ -1,6 +1,8 @@
-import Typer from "@/components/Typer";
-import Events from "@/components/Events";
+import type { EventResponse } from "@/types/api";
+
 import Config from "@/config/site";
+import Typer from "@/components/Typer";
+import EventCard from "@/components/EventCard";
 import Divider from "@/components/ui/divider";
 import { Separator } from "@/components/ui/separator";
 import { buttonVariants } from "@/components/ui/button";
@@ -8,7 +10,31 @@ import { cn } from "@/lib/utils";
 
 import Discord from "@/public/assets/icons/discord.svg";
 
+// Fetch events from the VATSIM API
+async function getEvents(): Promise<EventResponse> {
+    const res = await fetch(
+        "https://my.vatsim.net/api/v2/events/view/division/mena",
+        {
+            headers: {
+                Accept: "application/json",
+            },
+        }
+    );
+
+    if (!res.ok) throw new Error("Failed to fetch events");
+
+    // Filter those events that includes an airport that is in Saudi Arabia
+    var response: EventResponse = await res.json();
+    response.data = response.data.filter((event) =>
+        event.airports.some((event) => event.icao.startsWith("OE"))
+    );
+
+    return response;
+}
+
 export default async function Home() {
+    const events = (await getEvents())?.data;
+
     return (
         <main className="flex flex-col">
             <section className="h-[80vh] bg-[url('/assets/background.png')] bg-cover bg-no-repeat bg-center">
@@ -39,7 +65,30 @@ export default async function Home() {
             <section className="bg-green-900">
                 <div className="container flex flex-col items-center gap-8 py-10">
                     <h2 className="text-4xl">Upcoming Events</h2>
-                    <Events />
+                    <div className="flex flex-wrap justify-center gap-8">
+                        {events?.length ? (
+                            events.map((event) => (
+                                <EventCard
+                                    key={event.id}
+                                    link={event.link}
+                                    title={event.name}
+                                    date={new Date(
+                                        event.start_time
+                                    ).toLocaleDateString("en-US", {
+                                        year: "numeric",
+                                        month: "long",
+                                        day: "numeric",
+                                    })}
+                                    type={event.type}
+                                    image_url={event.banner}
+                                />
+                            ))
+                        ) : (
+                            <h1 className="text-lg">
+                                No upcoming events found.
+                            </h1>
+                        )}
+                    </div>
                 </div>
             </section>
 
