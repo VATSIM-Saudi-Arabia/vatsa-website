@@ -23,7 +23,7 @@ export default function EventCard({
             rel="noreferrer noopener"
             className="hover:opacity-80 transition-opacity ease-in-out"
         >
-            <Card className="dark max-w-sm overflow-hidden">
+            <Card className="dark w-[75vw] md:w-[25vw] overflow-hidden">
                 <CardContent className="p-0">
                     <Image
                         src={image_url}
@@ -36,7 +36,9 @@ export default function EventCard({
                     />
                 </CardContent>
                 <CardHeader>
-                    <CardTitle>{title}</CardTitle>
+                    <CardTitle className="whitespace-nowrap overflow-hidden text-ellipsis">
+                        {title}
+                    </CardTitle>
                     <CardDescription>{type + " • " + date}</CardDescription>
                 </CardHeader>
             </Card>
