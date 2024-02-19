@@ -30,8 +30,9 @@ export default function EventCard({
                         alt="Card Image"
                         width={0}
                         height={0}
-                        sizes="100vh"
+                        sizes="50vh"
                         className="w-full h-auto"
+                        priority
                     />
                 </CardContent>
                 <CardHeader>
