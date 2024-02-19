@@ -12,14 +12,11 @@ import Discord from "@/public/assets/icons/discord.svg";
 
 // Fetch events from the VATSIM API
 async function getEvents(): Promise<EventResponse> {
-    const res = await fetch(
-        "https://my.vatsim.net/api/v2/events/view/division/mena",
-        {
-            headers: {
-                Accept: "application/json",
-            },
-        }
-    );
+    const res = await fetch("https://my.vatsim.net/api/v2/events/latest", {
+        headers: {
+            Accept: "application/json",
+        },
+    });
 
     if (!res.ok) throw new Error("Failed to fetch events");
 
@@ -35,6 +32,7 @@ async function getEvents(): Promise<EventResponse> {
 export default async function Home() {
     const events = (await getEvents())?.data;
 
+    console.log(events);
     return (
         <main className="flex flex-col">
             <section className="h-[80vh] bg-[url('/assets/background.png')] bg-cover bg-no-repeat bg-center">
