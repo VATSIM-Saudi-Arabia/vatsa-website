@@ -21,6 +21,7 @@ export default function MainNav({ items }: { items: NavItem[] }) {
                     alt="Logo"
                     width={80}
                     height={80}
+                    priority
                 />
             </Link>
 

@@ -4,6 +4,7 @@ import type { Metadata } from "next";
 
 import Config from "@/config/site";
 import Header from "@/components/header/main-header";
+import Footer from "@/components/footer/main-footer";
 import { Mulish } from "next/font/google";
 import { cn } from "@/lib/utils";
 
@@ -24,9 +25,7 @@ export default function RootLayout({
             <body className={cn("dark", mulish.className)}>
                 <Header />
                 {children}
-                <footer className="flex justify-center items-center h-40 w-full">
-                    made by wookie :)
-                </footer>
+                <Footer />
             </body>
         </html>
     );

@@ -4,7 +4,6 @@ import Config from "@/config/site";
 import Typer from "@/components/Typer";
 import EventCard from "@/components/EventCard";
 import Divider from "@/components/ui/divider";
-import { Separator } from "@/components/ui/separator";
 import { buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
@@ -32,7 +31,6 @@ async function getEvents(): Promise<EventResponse> {
 export default async function Home() {
     const events = (await getEvents())?.data;
 
-    console.log(events);
     return (
         <main className="flex flex-col">
             <section className="h-[80vh] bg-[url('/assets/background.png')] bg-cover bg-no-repeat bg-center">
@@ -118,8 +116,6 @@ export default async function Home() {
                         </div>
                     </a>
                 </div>
-
-                <Separator className="container" />
             </section>
         </main>
     );
