@@ -5,4 +5,7 @@ export type SiteConfig = {
     description: string;
     subheadings: string[];
     navigation: NavItem[];
+    links: {
+        discord: string;
+    };
 };

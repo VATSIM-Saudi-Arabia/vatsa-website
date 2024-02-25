@@ -102,7 +102,7 @@ export default async function Home() {
                         airspaces over the Kingdom of Saudi Arabia
                     </p>
                     <a
-                        href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+                        href={Config.links.discord}
                         target="_blank"
                         rel="noreferrer noopener"
                         className={cn(
