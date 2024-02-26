@@ -8,12 +8,7 @@ export default function Footer() {
 
             <div className="flex flex-wrap justify-between py-10">
                 <div className="flex flex-col gap-2 items-center">
-                    <Image
-                        src="/assets/logo.png"
-                        alt="Logo"
-                        width={80}
-                        height={80}
-                    />
+                    <Image src="/assets/logo.png" alt="Logo" width={80} height={80} />
                     <p>© VATSIM Saudi Arabia 2024</p>
                 </div>
                 <div>I</div>

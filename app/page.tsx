@@ -90,7 +90,7 @@ export default async function Home() {
 
             <section className="bg-background">
                 <div className="text-green-900">
-                    <div className="block left-0 h-16 w-full overflow-hidden leading-0">
+                    <div className="relative left-0 h-16 w-full overflow-hidden leading-0">
                         <Divider className="absolute" />
                     </div>
                 </div>

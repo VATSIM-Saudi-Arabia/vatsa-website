@@ -21,15 +21,7 @@ const siteConfig: SiteConfig = {
         },
         {
             title: "Pilots",
-            href: "/",
-        },
-        {
-            title: "Controllers",
-            href: "/",
-        },
-        {
-            title: "About",
-            href: "/",
+            options: [{ title: "Main", href: "/pilots" }],
         },
     ],
     links: {

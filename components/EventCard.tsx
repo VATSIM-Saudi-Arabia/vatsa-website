@@ -1,21 +1,9 @@
 import type { Event } from "@/types";
 
-import {
-    Card,
-    CardContent,
-    CardDescription,
-    CardHeader,
-    CardTitle,
-} from "./ui/card";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "./ui/card";
 import Image from "next/image";
 
-export default function EventCard({
-    link,
-    title,
-    type,
-    date,
-    image_url,
-}: Event) {
+export default function EventCard({ link, title, type, date, image_url }: Event) {
     return (
         <a
             href={link}
