@@ -21,7 +21,12 @@ const siteConfig: SiteConfig = {
         },
         {
             title: "Pilots",
-            options: [{ title: "Main", href: "/pilots" }],
+            options: [
+                { title: "Pilot Training", href: "/pilots" },
+                { title: "Charts", href: "/pilots" },
+                { title: "Virtual Airlines", href: "/pilots" },
+                { title: "Aiport Briefing", href: "/pilots" },
+            ],
         },
     ],
     links: {

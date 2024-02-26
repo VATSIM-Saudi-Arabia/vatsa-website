@@ -18,7 +18,7 @@ export default function EventCard({ link, title, type, date, image_url }: Event)
                         alt="Card Image"
                         width={0}
                         height={0}
-                        sizes="50vh"
+                        sizes="75vh"
                         className="w-full h-auto"
                         priority
                     />
