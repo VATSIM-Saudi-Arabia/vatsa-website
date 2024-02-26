@@ -47,7 +47,7 @@ export default async function Home() {
                     </div>
 
                     <div className="relative text-green-900">
-                        <div className="absolute bottom-0 left-0 h-16 w-full overflow-hidden leading-0 rotate-180">
+                        <div className="absolute bottom-0 h-16 w-full overflow-hidden leading-0 rotate-180">
                             <Divider className="absolute bottom-0" />
                         </div>
                     </div>
@@ -77,7 +77,7 @@ export default async function Home() {
 
             <section className="bg-background">
                 <div className="text-green-900">
-                    <div className="relative left-0 h-16 w-full overflow-hidden leading-0">
+                    <div className="relative h-16 w-full overflow-hidden leading-0">
                         <Divider className="absolute" />
                     </div>
                 </div>

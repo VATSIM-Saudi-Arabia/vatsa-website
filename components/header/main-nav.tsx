@@ -34,7 +34,7 @@ export default function MainNav({ items }: { items: NavItem[] }) {
                 {items.map((item, index) => {
                     if (item.options)
                         return (
-                            <DropdownMenu>
+                            <DropdownMenu key={index}>
                                 <DropdownMenuTrigger asChild>
                                     <Button variant="link">{item.title}</Button>
                                 </DropdownMenuTrigger>
@@ -76,7 +76,7 @@ export default function MainNav({ items }: { items: NavItem[] }) {
                             {items.map((item, index) => {
                                 if (item.options)
                                     return (
-                                        <DropdownMenu>
+                                        <DropdownMenu key={index}>
                                             <DropdownMenuTrigger asChild>
                                                 <Button variant="outline">{item.title}</Button>
                                             </DropdownMenuTrigger>
