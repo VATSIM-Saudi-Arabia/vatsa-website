@@ -12,9 +12,8 @@ import Discord from "@/public/assets/icons/discord.svg";
 // Fetch events from the VATSIM API
 async function getEvents(): Promise<EventResponse> {
     const res = await fetch("https://my.vatsim.net/api/v2/events/latest", {
-        headers: {
-            Accept: "application/json",
-        },
+        headers: { Accept: "application/json" },
+        next: { revalidate: 3600 },
     });
 
     if (!res.ok) throw new Error("Failed to fetch events");
