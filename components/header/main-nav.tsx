@@ -1,10 +1,7 @@
-import type { NavItem } from "@/types/nav";
-
 import {
     DropdownMenu,
     DropdownMenuContent,
     DropdownMenuItem,
-    DropdownMenuLabel,
     DropdownMenuSeparator,
     DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
@@ -20,10 +17,30 @@ import {
 import { Button, buttonVariants } from "@/components/ui/button";
 import Image from "next/image";
 import Link from "next/link";
+import { cn } from "@/lib/utils";
 
-import { Menu, ChevronDown } from "lucide-react";
+import {
+    Menu,
+    ChevronDown,
+    Home,
+    Plane,
+    Radar,
+    GraduationCap,
+    Map,
+    PlaneTakeoff,
+    NotebookText,
+    TowerControl,
+    BaggageClaim,
+    Users,
+    MessageCircleHeart,
+    Navigation,
+    Building2,
+    Info,
+    Shield,
+    Siren,
+} from "lucide-react";
 
-export default function MainNav({ items }: { items: NavItem[] }) {
+export default function MainNav() {
     return (
         <div className="container flex items-center justify-between h-28">
             <Link href="/">
@@ -31,33 +48,127 @@ export default function MainNav({ items }: { items: NavItem[] }) {
             </Link>
 
             <div className="hidden sm:flex items-center gap-2">
-                {items.map((item, index) => {
-                    if (item.options)
-                        return (
-                            <DropdownMenu key={index}>
-                                <DropdownMenuTrigger asChild>
-                                    <Button variant="link">{item.title}</Button>
-                                </DropdownMenuTrigger>
-                                <DropdownMenuContent>
-                                    {item.options.map((option, index) => (
-                                        <DropdownMenuItem key={index} asChild>
-                                            <Link href={option.href}>{option.title}</Link>
-                                        </DropdownMenuItem>
-                                    ))}
-                                </DropdownMenuContent>
-                            </DropdownMenu>
-                        );
+                <Link
+                    href="/"
+                    className={cn(buttonVariants({ variant: "link" }), "flex items-center gap-2")}
+                >
+                    <Home size={15} />
+                    Home
+                </Link>
 
-                    return (
-                        <Link
-                            key={index}
-                            href={item.href ?? ""}
-                            className={buttonVariants({ variant: "link" })}
-                        >
-                            {item.title}
-                        </Link>
-                    );
-                })}
+                <DropdownMenu>
+                    <DropdownMenuTrigger asChild>
+                        <Button variant="link" className="flex items-center gap-2">
+                            <Plane size={15} />
+                            Pilots
+                        </Button>
+                    </DropdownMenuTrigger>
+
+                    <DropdownMenuContent>
+                        <DropdownMenuItem asChild>
+                            <Link href="/pilots/training" className="flex items-center gap-2">
+                                <GraduationCap size={15} />
+                                Pilot Training
+                            </Link>
+                        </DropdownMenuItem>
+
+                        <DropdownMenuSeparator />
+
+                        <DropdownMenuItem asChild>
+                            <Link href="/pilots/training" className="flex items-center gap-2">
+                                <Map size={15} />
+                                Charts
+                            </Link>
+                        </DropdownMenuItem>
+
+                        <DropdownMenuItem asChild>
+                            <Link href="/pilots/training" className="flex items-center gap-2">
+                                <PlaneTakeoff size={15} />
+                                Virtual Airlines
+                            </Link>
+                        </DropdownMenuItem>
+
+                        <DropdownMenuItem asChild>
+                            <Link href="/pilots/training" className="flex items-center gap-2">
+                                <NotebookText size={15} />
+                                Airport Briefing
+                            </Link>
+                        </DropdownMenuItem>
+                    </DropdownMenuContent>
+                </DropdownMenu>
+
+                <DropdownMenu>
+                    <DropdownMenuTrigger asChild>
+                        <Button variant="link" className="flex items-center gap-2">
+                            <Radar size={15} />
+                            Controllers
+                        </Button>
+                    </DropdownMenuTrigger>
+
+                    <DropdownMenuContent>
+                        <DropdownMenuItem asChild>
+                            <Link href="/pilots/training" className="flex items-center gap-2">
+                                <TowerControl size={15} />
+                                Become ATC
+                            </Link>
+                        </DropdownMenuItem>
+
+                        <DropdownMenuSeparator />
+
+                        <DropdownMenuItem asChild>
+                            <Link href="/pilots/training" className="flex items-center gap-2">
+                                <BaggageClaim size={15} />
+                                Visit / Transfer
+                            </Link>
+                        </DropdownMenuItem>
+
+                        <DropdownMenuItem asChild>
+                            <Link href="/pilots/training" className="flex items-center gap-2">
+                                <Users size={15} />
+                                ATC Roster
+                            </Link>
+                        </DropdownMenuItem>
+
+                        <DropdownMenuItem asChild>
+                            <Link href="/pilots/training" className="flex items-center gap-2">
+                                <MessageCircleHeart size={15} />
+                                Feedback
+                            </Link>
+                        </DropdownMenuItem>
+                    </DropdownMenuContent>
+                </DropdownMenu>
+
+                <DropdownMenu>
+                    <DropdownMenuTrigger asChild>
+                        <Button variant="link" className="flex items-center gap-2">
+                            <Building2 size={15} />
+                            vACC
+                        </Button>
+                    </DropdownMenuTrigger>
+
+                    <DropdownMenuContent>
+                        <DropdownMenuItem asChild>
+                            <Link href="/pilots/training" className="flex items-center gap-2">
+                                <Info size={15} />
+                                About Us
+                            </Link>
+                        </DropdownMenuItem>
+
+                        <DropdownMenuItem asChild>
+                            <Link href="/pilots/training" className="flex items-center gap-2">
+                                <Shield size={15} />
+                                Staff
+                            </Link>
+                        </DropdownMenuItem>
+
+                        <DropdownMenuItem asChild>
+                            <Link href="/pilots/training" className="flex items-center gap-2">
+                                <Siren size={15} />
+                                Policies
+                            </Link>
+                        </DropdownMenuItem>
+                    </DropdownMenuContent>
+                </DropdownMenu>
             </div>
 
             <div className="sm:hidden">
@@ -67,37 +178,193 @@ export default function MainNav({ items }: { items: NavItem[] }) {
                             <Menu size={30} />
                         </Button>
                     </DrawerTrigger>
+
                     <DrawerContent>
                         <DrawerHeader className="text-left">
-                            <DrawerTitle>Navigation Menu</DrawerTitle>
+                            <DrawerTitle className="flex items-center gap-2">
+                                <Navigation size={15} />
+                                Navigation Menu
+                            </DrawerTitle>
                         </DrawerHeader>
 
                         <div className="flex flex-col gap-2 p-4">
-                            {items.map((item, index) => {
-                                if (item.options)
-                                    return (
-                                        <DropdownMenu key={index}>
-                                            <DropdownMenuTrigger asChild>
-                                                <Button variant="outline">{item.title}</Button>
-                                            </DropdownMenuTrigger>
-                                            <DropdownMenuContent>
-                                                {item.options.map((option, index) => (
-                                                    <DropdownMenuItem key={index} asChild>
-                                                        <Link href={option.href}>
-                                                            {option.title}
-                                                        </Link>
-                                                    </DropdownMenuItem>
-                                                ))}
-                                            </DropdownMenuContent>
-                                        </DropdownMenu>
-                                    );
+                            <Button variant="outline" className="w-full">
+                                <DrawerClose asChild>
+                                    <Link href="/" className="flex items-center gap-2">
+                                        <Home size={15} />
+                                        Home
+                                    </Link>
+                                </DrawerClose>
+                            </Button>
 
-                                return (
-                                    <Button key={index} variant="outline" className="w-full">
-                                        <Link href={item.href ?? ""}>{item.title}</Link>
+                            <DropdownMenu>
+                                <DropdownMenuTrigger asChild>
+                                    <Button variant="outline" className="flex items-center gap-2">
+                                        <Plane size={15} />
+                                        Pilots
                                     </Button>
-                                );
-                            })}
+                                </DropdownMenuTrigger>
+
+                                <DropdownMenuContent>
+                                    <DropdownMenuItem asChild>
+                                        <DrawerClose asChild>
+                                            <Link
+                                                href="/pilots/training"
+                                                className="flex items-center gap-2"
+                                            >
+                                                <GraduationCap size={15} />
+                                                Pilot Training
+                                            </Link>
+                                        </DrawerClose>
+                                    </DropdownMenuItem>
+
+                                    <DropdownMenuSeparator />
+
+                                    <DropdownMenuItem asChild>
+                                        <DrawerClose asChild>
+                                            <Link
+                                                href="/pilots/training"
+                                                className="flex items-center gap-2"
+                                            >
+                                                <Map size={15} />
+                                                Charts
+                                            </Link>
+                                        </DrawerClose>
+                                    </DropdownMenuItem>
+
+                                    <DropdownMenuItem asChild>
+                                        <DrawerClose asChild>
+                                            <Link
+                                                href="/pilots/training"
+                                                className="flex items-center gap-2"
+                                            >
+                                                <PlaneTakeoff size={15} />
+                                                Virtual Airlines
+                                            </Link>
+                                        </DrawerClose>
+                                    </DropdownMenuItem>
+
+                                    <DropdownMenuItem asChild>
+                                        <DrawerClose asChild>
+                                            <Link
+                                                href="/pilots/training"
+                                                className="flex items-center gap-2"
+                                            >
+                                                <NotebookText size={15} />
+                                                Airport Briefing
+                                            </Link>
+                                        </DrawerClose>
+                                    </DropdownMenuItem>
+                                </DropdownMenuContent>
+                            </DropdownMenu>
+
+                            <DropdownMenu>
+                                <DropdownMenuTrigger asChild>
+                                    <Button variant="outline" className="flex items-center gap-2">
+                                        <Radar size={15} />
+                                        Controllers
+                                    </Button>
+                                </DropdownMenuTrigger>
+
+                                <DropdownMenuContent>
+                                    <DropdownMenuItem asChild>
+                                        <DrawerClose asChild>
+                                            <Link
+                                                href="/pilots/training"
+                                                className="flex items-center gap-2"
+                                            >
+                                                <TowerControl size={15} />
+                                                Become ATC
+                                            </Link>
+                                        </DrawerClose>
+                                    </DropdownMenuItem>
+
+                                    <DropdownMenuSeparator />
+
+                                    <DropdownMenuItem asChild>
+                                        <DrawerClose asChild>
+                                            <Link
+                                                href="/pilots/training"
+                                                className="flex items-center gap-2"
+                                            >
+                                                <BaggageClaim size={15} />
+                                                Visit / Transfer
+                                            </Link>
+                                        </DrawerClose>
+                                    </DropdownMenuItem>
+
+                                    <DropdownMenuItem asChild>
+                                        <DrawerClose asChild>
+                                            <Link
+                                                href="/pilots/training"
+                                                className="flex items-center gap-2"
+                                            >
+                                                <Users size={15} />
+                                                ATC Roster
+                                            </Link>
+                                        </DrawerClose>
+                                    </DropdownMenuItem>
+
+                                    <DropdownMenuItem asChild>
+                                        <DrawerClose asChild>
+                                            <Link
+                                                href="/pilots/training"
+                                                className="flex items-center gap-2"
+                                            >
+                                                <MessageCircleHeart size={15} />
+                                                Feedback
+                                            </Link>
+                                        </DrawerClose>
+                                    </DropdownMenuItem>
+                                </DropdownMenuContent>
+                            </DropdownMenu>
+
+                            <DropdownMenu>
+                                <DropdownMenuTrigger asChild>
+                                    <Button variant="outline" className="flex items-center gap-2">
+                                        <Building2 size={15} />
+                                        vACC
+                                    </Button>
+                                </DropdownMenuTrigger>
+
+                                <DropdownMenuContent>
+                                    <DropdownMenuItem asChild>
+                                        <DrawerClose asChild>
+                                            <Link
+                                                href="/pilots/training"
+                                                className="flex items-center gap-2"
+                                            >
+                                                <Info size={15} />
+                                                About Us
+                                            </Link>
+                                        </DrawerClose>
+                                    </DropdownMenuItem>
+
+                                    <DropdownMenuItem asChild>
+                                        <DrawerClose asChild>
+                                            <Link
+                                                href="/pilots/training"
+                                                className="flex items-center gap-2"
+                                            >
+                                                <Shield size={15} />
+                                                Staff
+                                            </Link>
+                                        </DrawerClose>
+                                    </DropdownMenuItem>
+
+                                    <DropdownMenuItem asChild>
+                                        <DrawerClose asChild>
+                                            <Link
+                                                href="/pilots/training"
+                                                className="flex items-center gap-2"
+                                            >
+                                                <Siren size={15} />
+                                                Policies
+                                            </Link>
+                                        </DrawerClose>
+                                    </DropdownMenuItem>
+                                </DropdownMenuContent>
+                            </DropdownMenu>
                         </div>
 
                         <DrawerFooter>
@@ -109,16 +376,6 @@ export default function MainNav({ items }: { items: NavItem[] }) {
                         </DrawerFooter>
                     </DrawerContent>
                 </Drawer>
-                {/* <DropdownMenu>
-                    <DropdownMenuTrigger asChild></DropdownMenuTrigger>
-                    <DropdownMenuContent>
-                        {items.map((item, index) => (
-                            <DropdownMenuItem key={index} asChild>
-                                <Link href={item.href}>{item.title}</Link>
-                            </DropdownMenuItem>
-                        ))}
-                    </DropdownMenuContent>
-                </DropdownMenu> */}
             </div>
         </div>
     );

@@ -10,25 +10,6 @@ const siteConfig: SiteConfig = {
         "We are the largest airspace in the Middle East Region.",
         "We are VATSIM Saudi Arabia.",
     ],
-    navigation: [
-        {
-            title: "Home",
-            href: "/",
-        },
-        {
-            title: "Events",
-            href: "/#events",
-        },
-        {
-            title: "Pilots",
-            options: [
-                { title: "Pilot Training", href: "/pilots" },
-                { title: "Charts", href: "/pilots" },
-                { title: "Virtual Airlines", href: "/pilots" },
-                { title: "Aiport Briefing", href: "/pilots" },
-            ],
-        },
-    ],
     links: {
         discord: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
     },

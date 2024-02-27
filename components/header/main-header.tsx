@@ -3,7 +3,6 @@
 import { useState, useEffect } from "react";
 import { cn } from "@/lib/utils";
 import MainNav from "./main-nav";
-import Config from "@/config/site";
 
 export default function Header() {
     const [scrolled, setScrolled] = useState(false);
@@ -28,7 +27,7 @@ export default function Header() {
                 "bg-background": scrolled,
             })}
         >
-            <MainNav items={Config.navigation} />
+            <MainNav />
         </header>
     );
 }

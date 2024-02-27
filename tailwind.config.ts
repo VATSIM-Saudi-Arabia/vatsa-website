@@ -52,7 +52,9 @@ const config = {
                     DEFAULT: "hsl(var(--card))",
                     foreground: "hsl(var(--card-foreground))",
                 },
-                sagreen: "#4f7c22",
+                vacc: {
+                    green: "#4f7c22",
+                },
                 discord: "#7289da",
             },
             borderRadius: {
