@@ -35,9 +35,9 @@ import {
     MessageCircleHeart,
     Navigation,
     Building2,
-    Info,
     Shield,
-    Siren,
+    Files,
+    Info,
 } from "lucide-react";
 
 export default function MainNav() {
@@ -75,25 +75,35 @@ export default function MainNav() {
                         <DropdownMenuSeparator />
 
                         <DropdownMenuItem asChild>
-                            <Link href="/pilots/training" className="flex items-center gap-2">
+                            <a
+                                href="https://chartfox.org/"
+                                target="_blank"
+                                rel="noreferrer noopener"
+                                className="flex items-center gap-2"
+                            >
                                 <Map size={15} />
                                 Charts
-                            </Link>
+                            </a>
                         </DropdownMenuItem>
 
                         <DropdownMenuItem asChild>
-                            <Link href="/pilots/training" className="flex items-center gap-2">
+                            <a
+                                href="https://my.vatsim.net/virtual-airlines"
+                                target="_blank"
+                                rel="noreferrer noopener"
+                                className="flex items-center gap-2"
+                            >
                                 <PlaneTakeoff size={15} />
                                 Virtual Airlines
-                            </Link>
+                            </a>
                         </DropdownMenuItem>
 
-                        <DropdownMenuItem asChild>
+                        {/* <DropdownMenuItem asChild>
                             <Link href="/pilots/training" className="flex items-center gap-2">
                                 <NotebookText size={15} />
                                 Airport Briefing
                             </Link>
-                        </DropdownMenuItem>
+                        </DropdownMenuItem> */}
                     </DropdownMenuContent>
                 </DropdownMenu>
 
@@ -107,13 +117,13 @@ export default function MainNav() {
 
                     <DropdownMenuContent>
                         <DropdownMenuItem asChild>
-                            <Link href="/pilots/training" className="flex items-center gap-2">
+                            <Link href="/atc/join" className="flex items-center gap-2">
                                 <TowerControl size={15} />
                                 Become ATC
                             </Link>
                         </DropdownMenuItem>
 
-                        <DropdownMenuSeparator />
+                        {/* <DropdownMenuSeparator />
 
                         <DropdownMenuItem asChild>
                             <Link href="/pilots/training" className="flex items-center gap-2">
@@ -134,7 +144,7 @@ export default function MainNav() {
                                 <MessageCircleHeart size={15} />
                                 Feedback
                             </Link>
-                        </DropdownMenuItem>
+                        </DropdownMenuItem> */}
                     </DropdownMenuContent>
                 </DropdownMenu>
 
@@ -148,23 +158,23 @@ export default function MainNav() {
 
                     <DropdownMenuContent>
                         <DropdownMenuItem asChild>
-                            <Link href="/pilots/training" className="flex items-center gap-2">
-                                <Info size={15} />
-                                About Us
-                            </Link>
-                        </DropdownMenuItem>
-
-                        <DropdownMenuItem asChild>
-                            <Link href="/pilots/training" className="flex items-center gap-2">
+                            <Link href="/vacc/staff" className="flex items-center gap-2">
                                 <Shield size={15} />
                                 Staff
                             </Link>
                         </DropdownMenuItem>
 
                         <DropdownMenuItem asChild>
-                            <Link href="/pilots/training" className="flex items-center gap-2">
-                                <Siren size={15} />
+                            <Link href="/vacc/policies" className="flex items-center gap-2">
+                                <Files size={15} />
                                 Policies
+                            </Link>
+                        </DropdownMenuItem>
+
+                        <DropdownMenuItem asChild>
+                            <Link href="/vacc/about-us" className="flex items-center gap-2">
+                                <Info size={15} />
+                                About Us
                             </Link>
                         </DropdownMenuItem>
                     </DropdownMenuContent>
@@ -222,29 +232,33 @@ export default function MainNav() {
 
                                     <DropdownMenuItem asChild>
                                         <DrawerClose asChild>
-                                            <Link
-                                                href="/pilots/training"
+                                            <a
+                                                href="https://chartfox.org/"
+                                                target="_blank"
+                                                rel="noreferrer noopener"
                                                 className="flex items-center gap-2"
                                             >
                                                 <Map size={15} />
                                                 Charts
-                                            </Link>
+                                            </a>
                                         </DrawerClose>
                                     </DropdownMenuItem>
 
                                     <DropdownMenuItem asChild>
                                         <DrawerClose asChild>
-                                            <Link
-                                                href="/pilots/training"
+                                            <a
+                                                href="https://my.vatsim.net/virtual-airlines"
+                                                target="_blank"
+                                                rel="noreferrer noopener"
                                                 className="flex items-center gap-2"
                                             >
                                                 <PlaneTakeoff size={15} />
                                                 Virtual Airlines
-                                            </Link>
+                                            </a>
                                         </DrawerClose>
                                     </DropdownMenuItem>
 
-                                    <DropdownMenuItem asChild>
+                                    {/* <DropdownMenuItem asChild>
                                         <DrawerClose asChild>
                                             <Link
                                                 href="/pilots/training"
@@ -254,7 +268,7 @@ export default function MainNav() {
                                                 Airport Briefing
                                             </Link>
                                         </DrawerClose>
-                                    </DropdownMenuItem>
+                                    </DropdownMenuItem> */}
                                 </DropdownMenuContent>
                             </DropdownMenu>
 
@@ -270,7 +284,7 @@ export default function MainNav() {
                                     <DropdownMenuItem asChild>
                                         <DrawerClose asChild>
                                             <Link
-                                                href="/pilots/training"
+                                                href="/atc/join"
                                                 className="flex items-center gap-2"
                                             >
                                                 <TowerControl size={15} />
@@ -279,7 +293,7 @@ export default function MainNav() {
                                         </DrawerClose>
                                     </DropdownMenuItem>
 
-                                    <DropdownMenuSeparator />
+                                    {/* <DropdownMenuSeparator />
 
                                     <DropdownMenuItem asChild>
                                         <DrawerClose asChild>
@@ -315,7 +329,7 @@ export default function MainNav() {
                                                 Feedback
                                             </Link>
                                         </DrawerClose>
-                                    </DropdownMenuItem>
+                                    </DropdownMenuItem> */}
                                 </DropdownMenuContent>
                             </DropdownMenu>
 
@@ -331,19 +345,7 @@ export default function MainNav() {
                                     <DropdownMenuItem asChild>
                                         <DrawerClose asChild>
                                             <Link
-                                                href="/pilots/training"
-                                                className="flex items-center gap-2"
-                                            >
-                                                <Info size={15} />
-                                                About Us
-                                            </Link>
-                                        </DrawerClose>
-                                    </DropdownMenuItem>
-
-                                    <DropdownMenuItem asChild>
-                                        <DrawerClose asChild>
-                                            <Link
-                                                href="/pilots/training"
+                                                href="/vacc/staff"
                                                 className="flex items-center gap-2"
                                             >
                                                 <Shield size={15} />
@@ -355,11 +357,23 @@ export default function MainNav() {
                                     <DropdownMenuItem asChild>
                                         <DrawerClose asChild>
                                             <Link
-                                                href="/pilots/training"
+                                                href="/vacc/policies"
                                                 className="flex items-center gap-2"
                                             >
-                                                <Siren size={15} />
+                                                <Files size={15} />
                                                 Policies
+                                            </Link>
+                                        </DrawerClose>
+                                    </DropdownMenuItem>
+
+                                    <DropdownMenuItem asChild>
+                                        <DrawerClose asChild>
+                                            <Link
+                                                href="/vacc/about-us"
+                                                className="flex items-center gap-2"
+                                            >
+                                                <Info size={15} />
+                                                About Us
                                             </Link>
                                         </DrawerClose>
                                     </DropdownMenuItem>

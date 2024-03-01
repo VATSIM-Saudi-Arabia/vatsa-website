@@ -1,10 +1,9 @@
-import Divider from "@/components/ui/divider";
 import Image from "next/image";
 
-export default async function Pilots() {
+export default async function PilotTraining() {
     return (
         <main className="flex flex-col">
-            <section className="h-screen bg-[url('/assets/pt_background.png')] bg-cover bg-no-repeat bg-center">
+            <section className="h-screen bg-[url('/assets/backgrounds/pt.png')] bg-cover bg-no-repeat bg-center">
                 <div className="h-full bg-black/30">
                     <div className="container flex flex-col justify-center items-center h-full">
                         <Image
@@ -13,15 +12,9 @@ export default async function Pilots() {
                             width={0}
                             height={0}
                             sizes="75vh"
-                            className="w-[25vw]"
+                            className="w-[50vw] sm:w-[25vw]"
                         />
-                        <h1 className="text-6xl">Coming Soon</h1>
-                    </div>
-                </div>
-
-                <div className="relative text-background">
-                    <div className="absolute bottom-0 h-16 w-full overflow-hidden leading-0 rotate-180">
-                        <Divider className="absolute bottom-0" />
+                        <h1 className="text-4xl sm:text-6xl">Coming Soon</h1>
                     </div>
                 </div>
             </section>

@@ -14,9 +14,9 @@ import {
     Users,
     MessageCircleHeart,
     Building2,
-    Info,
     Shield,
-    Siren,
+    Files,
+    Info,
 } from "lucide-react";
 
 export default function Footer() {
@@ -30,10 +30,10 @@ export default function Footer() {
                     <p>© VATSIM Saudi Arabia 2024</p>
                 </div>
                 <div className="flex flex-col gap-4">
-                    <div className="flex items-center gap-2">
+                    <span className="flex items-center gap-2">
                         <Plane size={15} />
-                        <p>Pilots</p>
-                    </div>
+                        Pilots
+                    </span>
 
                     <Separator />
 
@@ -45,52 +45,58 @@ export default function Footer() {
                             <GraduationCap size={15} />
                             Pilot Training
                         </Link>
-                        <Link
-                            href="/pilots/training"
+
+                        <a
+                            href="https://chartfox.org/"
+                            target="_blank"
+                            rel="noreferrer noopener"
                             className="flex items-center gap-2 hover:opacity-50"
                         >
                             <Map size={15} />
                             Charts
-                        </Link>
-                        <Link
-                            href="/pilots/training"
+                        </a>
+
+                        <a
+                            href="https://my.vatsim.net/virtual-airlines"
+                            target="_blank"
+                            rel="noreferrer noopener"
                             className="flex items-center gap-2 hover:opacity-50"
                         >
                             <PlaneTakeoff size={15} />
                             Virtual Airlines
-                        </Link>
-                        <Link
+                        </a>
+
+                        {/* <Link
                             href="/pilots/training"
                             className="flex items-center gap-2 hover:opacity-50"
                         >
                             <NotebookText size={15} />
                             Airport Briefing
-                        </Link>
+                        </Link> */}
                     </nav>
                 </div>
                 <div className="flex flex-col gap-4">
-                    <div className="flex items-center gap-2">
+                    <span className="flex items-center gap-2">
                         <Radar size={15} />
                         Controllers
-                    </div>
+                    </span>
 
                     <Separator />
 
                     <nav className="flex flex-col">
-                        <Link
-                            href="/pilots/training"
-                            className="flex items-center gap-2 hover:opacity-50"
-                        >
+                        <Link href="/atc/join" className="flex items-center gap-2 hover:opacity-50">
                             <TowerControl size={15} />
                             Become ATC
                         </Link>
-                        <Link
+
+                        {/* <Link
                             href="/pilots/training"
                             className="flex items-center gap-2 hover:opacity-50"
                         >
                             <BaggageClaim size={15} />
                             Visit / Transfer
                         </Link>
+
                         <Link
                             href="/pilots/training"
                             className="flex items-center gap-2 hover:opacity-50"
@@ -98,44 +104,47 @@ export default function Footer() {
                             <Users size={15} />
                             ATC Roster
                         </Link>
+
                         <Link
                             href="/pilots/training"
                             className="flex items-center gap-2 hover:opacity-50"
                         >
                             <MessageCircleHeart size={15} />
                             Feedback
-                        </Link>
+                        </Link> */}
                     </nav>
                 </div>
                 <div className="flex flex-col gap-4">
-                    <div className="flex items-center gap-2">
+                    <span className="flex items-center gap-2">
                         <Building2 size={15} />
                         vACC
-                    </div>
+                    </span>
 
                     <Separator />
 
                     <nav className="flex flex-col">
                         <Link
-                            href="/pilots/training"
-                            className="flex items-center gap-2 hover:opacity-50"
-                        >
-                            <Info size={15} />
-                            About Us
-                        </Link>
-                        <Link
-                            href="/pilots/training"
+                            href="/vacc/staff"
                             className="flex items-center gap-2 hover:opacity-50"
                         >
                             <Shield size={15} />
                             Staff
                         </Link>
+
                         <Link
-                            href="/pilots/training"
+                            href="/vacc/policies"
                             className="flex items-center gap-2 hover:opacity-50"
                         >
-                            <Siren size={15} />
+                            <Files size={15} />
                             Policies
+                        </Link>
+
+                        <Link
+                            href="/vacc/about-us"
+                            className="flex items-center gap-2 hover:opacity-50"
+                        >
+                            <Info size={15} />
+                            About Us
                         </Link>
                     </nav>
                 </div>

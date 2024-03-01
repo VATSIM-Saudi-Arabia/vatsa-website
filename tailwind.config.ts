@@ -53,7 +53,7 @@ const config = {
                     foreground: "hsl(var(--card-foreground))",
                 },
                 vacc: {
-                    green: "#4f7c22",
+                    green: "#16a34a",
                 },
                 discord: "#7289da",
             },

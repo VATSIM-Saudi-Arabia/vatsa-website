@@ -32,12 +32,12 @@ export default async function Home() {
 
     return (
         <main className="flex flex-col">
-            <section className="h-[80vh] bg-[url('/assets/background.png')] bg-cover bg-no-repeat bg-center">
+            <section className="h-[80vh] bg-[url('/assets/backgrounds/main.png')] bg-cover bg-no-repeat bg-center">
                 <div className="h-full bg-black/30">
                     <div className="container flex flex-col justify-center h-full">
                         <div className="text-4xl sm:text-6xl">
                             <h1>Welcome to </h1>
-                            <h1 className="font-bold text-green-600">VATSIM Saudi Arabia</h1>
+                            <h1 className="font-bold text-vacc-green">VATSIM Saudi Arabia</h1>
                         </div>
 
                         <h2 className="text-md sm:text-xl">
@@ -61,7 +61,7 @@ export default async function Home() {
                         Kingdom of Saudi Arabia
                     </p>
                     <a
-                        href={Config.links.discord}
+                        href={Config.links.discord.saudi}
                         target="_blank"
                         rel="noreferrer noopener"
                         className={cn(buttonVariants({ variant: "secondary" }), "bg-discord")}
