@@ -8,11 +8,8 @@ import {
     GraduationCap,
     Map,
     PlaneTakeoff,
-    NotebookText,
     TowerControl,
-    BaggageClaim,
     Users,
-    MessageCircleHeart,
     Building2,
     Shield,
     Files,
@@ -89,20 +86,20 @@ export default function Footer() {
                             Become ATC
                         </Link>
 
+                        <Link
+                            href="/atc/roster"
+                            className="flex items-center gap-2 hover:opacity-50"
+                        >
+                            <Users size={15} />
+                            ATC Roster
+                        </Link>
+
                         {/* <Link
                             href="/pilots/training"
                             className="flex items-center gap-2 hover:opacity-50"
                         >
                             <BaggageClaim size={15} />
                             Visit / Transfer
-                        </Link>
-
-                        <Link
-                            href="/pilots/training"
-                            className="flex items-center gap-2 hover:opacity-50"
-                        >
-                            <Users size={15} />
-                            ATC Roster
                         </Link>
 
                         <Link

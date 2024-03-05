@@ -28,7 +28,7 @@ async function getEvents(): Promise<EventResponse> {
 }
 
 export default async function Home() {
-    const events = (await getEvents())?.data;
+    const events = await getEvents();
 
     return (
         <main className="flex flex-col">
@@ -84,8 +84,8 @@ export default async function Home() {
                 <div className="container flex flex-col items-center gap-8 py-10">
                     <h2 className="text-4xl">Upcoming Events</h2>
                     <div className="flex flex-wrap justify-center gap-8">
-                        {events?.length ? (
-                            events.map((event, index) => (
+                        {events.data?.length ? (
+                            events.data.map((event, index) => (
                                 <EventCard
                                     key={index}
                                     link={event.link}

@@ -28,11 +28,8 @@ import {
     GraduationCap,
     Map,
     PlaneTakeoff,
-    NotebookText,
     TowerControl,
-    BaggageClaim,
     Users,
-    MessageCircleHeart,
     Navigation,
     Building2,
     Shield,
@@ -123,19 +120,19 @@ export default function MainNav() {
                             </Link>
                         </DropdownMenuItem>
 
+                        <DropdownMenuItem asChild>
+                            <Link href="/atc/roster" className="flex items-center gap-2">
+                                <Users size={15} />
+                                ATC Roster
+                            </Link>
+                        </DropdownMenuItem>
+
                         {/* <DropdownMenuSeparator />
 
                         <DropdownMenuItem asChild>
                             <Link href="/pilots/training" className="flex items-center gap-2">
                                 <BaggageClaim size={15} />
                                 Visit / Transfer
-                            </Link>
-                        </DropdownMenuItem>
-
-                        <DropdownMenuItem asChild>
-                            <Link href="/pilots/training" className="flex items-center gap-2">
-                                <Users size={15} />
-                                ATC Roster
                             </Link>
                         </DropdownMenuItem>
 
@@ -293,6 +290,18 @@ export default function MainNav() {
                                         </DrawerClose>
                                     </DropdownMenuItem>
 
+                                    <DropdownMenuItem asChild>
+                                        <DrawerClose asChild>
+                                            <Link
+                                                href="/atc/roster"
+                                                className="flex items-center gap-2"
+                                            >
+                                                <Users size={15} />
+                                                ATC Roster
+                                            </Link>
+                                        </DrawerClose>
+                                    </DropdownMenuItem>
+
                                     {/* <DropdownMenuSeparator />
 
                                     <DropdownMenuItem asChild>
@@ -303,18 +312,6 @@ export default function MainNav() {
                                             >
                                                 <BaggageClaim size={15} />
                                                 Visit / Transfer
-                                            </Link>
-                                        </DrawerClose>
-                                    </DropdownMenuItem>
-
-                                    <DropdownMenuItem asChild>
-                                        <DrawerClose asChild>
-                                            <Link
-                                                href="/pilots/training"
-                                                className="flex items-center gap-2"
-                                            >
-                                                <Users size={15} />
-                                                ATC Roster
                                             </Link>
                                         </DrawerClose>
                                     </DropdownMenuItem>

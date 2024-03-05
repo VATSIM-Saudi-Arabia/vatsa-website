@@ -12,3 +12,12 @@ export type Staff = {
     name: string;
     email: string;
 };
+
+export type Roster = {
+    first_name: string;
+    last_name: string;
+    rating: {
+        short: string;
+        long: string;
+    };
+}[];

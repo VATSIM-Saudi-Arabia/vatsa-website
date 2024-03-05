@@ -11,8 +11,10 @@ export default async function ATCJoin() {
             <section className="h-screen bg-[url('/assets/backgrounds/atc.jpg')] bg-cover bg-no-repeat bg-center">
                 <div className="h-full backdrop-blur-md">
                     <div className="container flex flex-col justify-center items-center h-full">
-                        <h1 className="text-6xl">Do you have what it takes?</h1>
-                        <h2 className="opacity-65">
+                        <h1 className="text-4xl md:text-6xl text-center">
+                            Do you have what it takes?
+                        </h1>
+                        <h2 className="text-center opacity-65">
                             Control the skies with us. More information below.
                         </h2>
                     </div>
