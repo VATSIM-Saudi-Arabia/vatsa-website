@@ -130,7 +130,7 @@ export default async function ATCRoster() {
                                     <TableRow>
                                         <TableHead className="w-[15%]">Name</TableHead>
                                         <TableHead className="w-0">Rating</TableHead>
-                                        <TableHead className="text-center">Title</TableHead>
+                                        <TableHead>Title</TableHead>
                                         <TableHead className="text-center">DEL</TableHead>
                                         <TableHead className="text-center">GND</TableHead>
                                         <TableHead className="text-center">TWR</TableHead>
