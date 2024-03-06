@@ -19,5 +19,6 @@ export type Roster = {
     rating: {
         short: string;
         long: string;
+        color: string;
     };
 }[];

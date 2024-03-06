@@ -10,6 +10,7 @@ import {
     TableHeader,
     TableRow,
 } from "@/components/ui/table";
+import { Badge } from "@/components/ui/badge";
 
 import { Users } from "lucide-react";
 
@@ -43,19 +44,19 @@ async function getRoster(): Promise<Roster> {
     if (!res.ok) throw new Error("Failed to fetch roster: " + JSON.stringify(response));
 
     const ratings = [
-        { short: "SUS", long: "Suspended" },
-        { short: "OBS", long: "Pilot / Observer" },
-        { short: "S1", long: "Tower Trainee" },
-        { short: "S2", long: "Tower Controller" },
-        { short: "S3", long: "TMA Controller" },
-        { short: "C1", long: "Enroute Controller" },
-        { short: "C2", long: "Senior Controller" },
-        { short: "C3", long: "Senior Controller" },
-        { short: "I1", long: "Instructor" },
-        { short: "I2", long: "Senior Instructor" },
-        { short: "I3", long: "Senior Instructor" },
-        { short: "SUP", long: "Supervisor" },
-        { short: "ADM", long: "Administrator" },
+        { short: "SUS", long: "Suspended", color: "bg-gray-500" },
+        { short: "OBS", long: "Pilot / Observer", color: "bg-gray-500" },
+        { short: "S1", long: "Tower Trainee", color: "bg-yellow-500" },
+        { short: "S2", long: "Tower Controller", color: "bg-yellow-500" },
+        { short: "S3", long: "TMA Controller", color: "bg-yellow-500" },
+        { short: "C1", long: "Enroute Controller", color: "bg-green-500" },
+        { short: "C2", long: "Senior Controller", color: "bg-green-500" },
+        { short: "C3", long: "Senior Controller", color: "bg-green-500" },
+        { short: "I1", long: "Instructor", color: "bg-red-500" },
+        { short: "I2", long: "Senior Instructor", color: "bg-red-500" },
+        { short: "I3", long: "Senior Instructor", color: "bg-red-500" },
+        { short: "SUP", long: "Supervisor", color: "bg-purple-500" },
+        { short: "ADM", long: "Administrator", color: "bg-purple-500" },
     ];
 
     // Filter the response for useful data.
@@ -96,19 +97,23 @@ export default async function ATCRoster() {
                         <Table>
                             <TableHeader>
                                 <TableRow>
+                                    <TableHead className="w-[15%]">Name</TableHead>
                                     <TableHead className="w-0">Rating</TableHead>
-                                    <TableHead className="w-[15%]">Title</TableHead>
-                                    <TableHead>Name</TableHead>
+                                    <TableHead>Title</TableHead>
                                 </TableRow>
                             </TableHeader>
                             <TableBody>
                                 {roster.map((member, index) => (
                                     <TableRow key={index}>
-                                        <TableCell>{member.rating.short}</TableCell>
-                                        <TableCell>{member.rating.long}</TableCell>
                                         <TableCell>
                                             {member.first_name + " " + member.last_name}
                                         </TableCell>
+                                        <TableCell>
+                                            <Badge className={member.rating.color}>
+                                                {member.rating.short}
+                                            </Badge>
+                                        </TableCell>
+                                        <TableCell>{member.rating.long}</TableCell>
                                     </TableRow>
                                 ))}
                             </TableBody>

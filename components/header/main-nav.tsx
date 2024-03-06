@@ -120,6 +120,8 @@ export default function MainNav() {
                             </Link>
                         </DropdownMenuItem>
 
+                        <DropdownMenuSeparator />
+
                         <DropdownMenuItem asChild>
                             <Link href="/atc/roster" className="flex items-center gap-2">
                                 <Users size={15} />
@@ -127,9 +129,7 @@ export default function MainNav() {
                             </Link>
                         </DropdownMenuItem>
 
-                        {/* <DropdownMenuSeparator />
-
-                        <DropdownMenuItem asChild>
+                        {/* <DropdownMenuItem asChild>
                             <Link href="/pilots/training" className="flex items-center gap-2">
                                 <BaggageClaim size={15} />
                                 Visit / Transfer
@@ -290,6 +290,8 @@ export default function MainNav() {
                                         </DrawerClose>
                                     </DropdownMenuItem>
 
+                                    <DropdownMenuSeparator />
+
                                     <DropdownMenuItem asChild>
                                         <DrawerClose asChild>
                                             <Link
@@ -302,9 +304,7 @@ export default function MainNav() {
                                         </DrawerClose>
                                     </DropdownMenuItem>
 
-                                    {/* <DropdownMenuSeparator />
-
-                                    <DropdownMenuItem asChild>
+                                    {/* <DropdownMenuItem asChild>
                                         <DrawerClose asChild>
                                             <Link
                                                 href="/pilots/training"

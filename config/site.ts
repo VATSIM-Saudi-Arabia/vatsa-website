@@ -75,8 +75,8 @@ const siteConfig: SiteConfig = {
         {
             code: "ACCSA6",
             title: "Technical Director",
-            name: "Vacant - Open",
-            email: "N/A",
+            name: "Bilal Baig",
+            email: "tech@vatsimsa.com",
         },
         {
             code: "ACCSA7",
