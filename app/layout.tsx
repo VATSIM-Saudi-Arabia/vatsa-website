@@ -1,6 +1,6 @@
 import "./globals.css";
 
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 
 import Config from "@/config/site";
 import Header from "@/components/header/main-header";
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
         siteName: Config.title,
         images: [
             {
-                url: "https://vatsimsa.com/assets/logo.png", // Must be an absolute URL
+                url: "https://vatsimsa.com/assets/logo.png",
                 width: 200,
                 height: 200,
             },
@@ -28,6 +28,10 @@ export const metadata: Metadata = {
         locale: "en_US",
         type: "website",
     },
+};
+
+export const viewport: Viewport = {
+    themeColor: "#16a34a",
 };
 
 export default function RootLayout({
