@@ -1,5 +1,5 @@
 import type { SiteConfig } from "@/types/config";
-import { Approval } from "@/types";
+// import { Approval } from "@/types";
 
 // Separate configs in the future
 
