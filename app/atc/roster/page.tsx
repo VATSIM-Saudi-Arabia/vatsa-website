@@ -15,7 +15,7 @@ import { Users } from "lucide-react";
 
 // Fetch roster from the VATSIM API
 async function getRoster(): Promise<Roster> {
-    const res = await fetch("https://api.vatsim.net/v2/orgs/subdivision/mena", {
+    const initial_res = await fetch("https://api.vatsim.net/v2/orgs/subdivision/SAU?limit=1", {
         headers: {
             Accept: "application/json",
             "X-API-Key": process.env.VATSIM_CORE_API_KEY,
@@ -23,13 +23,28 @@ async function getRoster(): Promise<Roster> {
         next: { revalidate: 3600 },
     });
 
-    if (!res.ok) throw new Error("Failed to fetch roster");
+    var initial: MembersResponse = await initial_res.json();
 
-    var response: MembersResponse = await res.json();
+    if (!initial_res.ok)
+        throw new Error("Failed to fetch initial roster: " + JSON.stringify(initial));
+
+    const count = initial.count;
+
+    const res = await fetch(`https://api.vatsim.net/v2/orgs/subdivision/SAU?limit=${count}`, {
+        headers: {
+            Accept: "application/json",
+            "X-API-Key": process.env.VATSIM_CORE_API_KEY,
+        },
+        next: { revalidate: 3600 },
+    });
+
+    const response: MembersResponse = await res.json();
+
+    if (!res.ok) throw new Error("Failed to fetch roster: " + JSON.stringify(response));
 
     const ratings = [
         { short: "SUS", long: "Suspended" },
-        { short: "OBS", long: "Pilot/Observer" },
+        { short: "OBS", long: "Pilot / Observer" },
         { short: "S1", long: "Tower Trainee" },
         { short: "S2", long: "Tower Controller" },
         { short: "S3", long: "TMA Controller" },
@@ -44,11 +59,13 @@ async function getRoster(): Promise<Roster> {
     ];
 
     // Filter the response for useful data.
-    const items: Roster = response.items?.map((item) => ({
-        first_name: item.name_first,
-        last_name: item.name_last,
-        rating: ratings[item.rating],
-    }));
+    const items: Roster = response.items
+        ?.filter((item) => item.rating > 1)
+        .map((item) => ({
+            first_name: item.name_first,
+            last_name: item.name_last,
+            rating: ratings[item.rating],
+        }));
 
     return items;
 }
@@ -80,18 +97,18 @@ export default async function ATCRoster() {
                             <TableHeader>
                                 <TableRow>
                                     <TableHead className="w-0">Rating</TableHead>
+                                    <TableHead className="w-[15%]">Title</TableHead>
                                     <TableHead>Name</TableHead>
-                                    <TableHead>Title</TableHead>
                                 </TableRow>
                             </TableHeader>
                             <TableBody>
                                 {roster.map((member, index) => (
                                     <TableRow key={index}>
                                         <TableCell>{member.rating.short}</TableCell>
+                                        <TableCell>{member.rating.long}</TableCell>
                                         <TableCell>
                                             {member.first_name + " " + member.last_name}
                                         </TableCell>
-                                        <TableCell>{member.rating.long}</TableCell>
                                     </TableRow>
                                 ))}
                             </TableBody>
