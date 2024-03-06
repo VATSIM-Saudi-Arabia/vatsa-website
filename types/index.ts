@@ -13,7 +13,8 @@ export type Staff = {
     email: string;
 };
 
-export type Roster = {
+export type RosterMember = {
+    cid: number;
     first_name: string;
     last_name: string;
     rating: {
@@ -21,4 +22,22 @@ export type Roster = {
         long: string;
         color: string;
     };
-}[];
+};
+
+export enum Position {
+    DEL = "del",
+    GND = "gnd",
+    TWR = "twr",
+    APP = "app",
+    CTR = "ctr",
+}
+
+export enum Approval {
+    Approved,
+    ApprovedT1,
+    ApprovedT2,
+    ApprovedT1T2,
+    Training,
+    TrainingT1,
+    TrainingT2,
+}

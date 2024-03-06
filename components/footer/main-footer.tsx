@@ -28,8 +28,7 @@ export default function Footer() {
                 </div>
                 <div className="flex flex-col gap-4">
                     <span className="flex items-center gap-2">
-                        <Plane size={15} />
-                        Pilots
+                        <Plane size={15} /> Pilots
                     </span>
 
                     <Separator />
@@ -39,8 +38,7 @@ export default function Footer() {
                             href="/pilots/training"
                             className="flex items-center gap-2 hover:opacity-50"
                         >
-                            <GraduationCap size={15} />
-                            Pilot Training
+                            <GraduationCap size={15} /> Pilot Training
                         </Link>
 
                         <a
@@ -49,8 +47,7 @@ export default function Footer() {
                             rel="noreferrer noopener"
                             className="flex items-center gap-2 hover:opacity-50"
                         >
-                            <Map size={15} />
-                            Charts
+                            <Map size={15} /> Charts
                         </a>
 
                         <a
@@ -59,8 +56,7 @@ export default function Footer() {
                             rel="noreferrer noopener"
                             className="flex items-center gap-2 hover:opacity-50"
                         >
-                            <PlaneTakeoff size={15} />
-                            Virtual Airlines
+                            <PlaneTakeoff size={15} /> Virtual Airlines
                         </a>
 
                         {/* <Link
@@ -74,24 +70,21 @@ export default function Footer() {
                 </div>
                 <div className="flex flex-col gap-4">
                     <span className="flex items-center gap-2">
-                        <Radar size={15} />
-                        Controllers
+                        <Radar size={15} /> Controllers
                     </span>
 
                     <Separator />
 
                     <nav className="flex flex-col">
                         <Link href="/atc/join" className="flex items-center gap-2 hover:opacity-50">
-                            <TowerControl size={15} />
-                            Become ATC
+                            <TowerControl size={15} /> Become ATC
                         </Link>
 
                         <Link
                             href="/atc/roster"
                             className="flex items-center gap-2 hover:opacity-50"
                         >
-                            <Users size={15} />
-                            ATC Roster
+                            <Users size={15} /> ATC Roster
                         </Link>
 
                         {/* <Link
@@ -113,8 +106,7 @@ export default function Footer() {
                 </div>
                 <div className="flex flex-col gap-4">
                     <span className="flex items-center gap-2">
-                        <Building2 size={15} />
-                        vACC
+                        <Building2 size={15} /> vACC
                     </span>
 
                     <Separator />
@@ -124,41 +116,25 @@ export default function Footer() {
                             href="/vacc/staff"
                             className="flex items-center gap-2 hover:opacity-50"
                         >
-                            <Shield size={15} />
-                            Staff
+                            <Shield size={15} /> Staff
                         </Link>
 
                         <Link
                             href="/vacc/policies"
                             className="flex items-center gap-2 hover:opacity-50"
                         >
-                            <Files size={15} />
-                            Policies
+                            <Files size={15} /> Policies
                         </Link>
 
                         <Link
                             href="/vacc/about-us"
                             className="flex items-center gap-2 hover:opacity-50"
                         >
-                            <Info size={15} />
-                            About Us
+                            <Info size={15} /> About Us
                         </Link>
                     </nav>
                 </div>
             </div>
-
-            <h2 className="py-4 text-center">
-                made by{" "}
-                <a
-                    href="http://bil.al"
-                    target="_blank"
-                    rel="noreferrer noopener"
-                    className="underline hover:opacity-50"
-                >
-                    bil.al
-                </a>{" "}
-                :)
-            </h2>
         </footer>
     );
 }

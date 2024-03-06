@@ -1,7 +1,9 @@
-import type { Roster } from "@/types";
+import { type RosterMember, Position, Approval } from "@/types";
 import type { MembersResponse } from "@/types/api";
 
+import Config from "@/config/site";
 import Divider from "@/components/ui/divider";
+import ATCLegend from "@/components/ATCLegend";
 import {
     Table,
     TableBody,
@@ -12,10 +14,10 @@ import {
 } from "@/components/ui/table";
 import { Badge } from "@/components/ui/badge";
 
-import { Users } from "lucide-react";
+import { Users, CheckCircle2, XCircle, GraduationCap } from "lucide-react";
 
 // Fetch roster from the VATSIM API
-async function getRoster(): Promise<Roster> {
+async function getRoster(): Promise<RosterMember[]> {
     const initial_res = await fetch("https://api.vatsim.net/v2/orgs/subdivision/SAU?limit=1", {
         headers: {
             Accept: "application/json",
@@ -24,11 +26,13 @@ async function getRoster(): Promise<Roster> {
         next: { revalidate: 3600 },
     });
 
+    // Get an initial response for the count of total members
     var initial: MembersResponse = await initial_res.json();
 
     if (!initial_res.ok)
         throw new Error("Failed to fetch initial roster: " + JSON.stringify(initial));
 
+    // Use the count from the initial response to fetch all members
     const count = initial.count;
 
     const res = await fetch(`https://api.vatsim.net/v2/orgs/subdivision/SAU?limit=${count}`, {
@@ -60,9 +64,10 @@ async function getRoster(): Promise<Roster> {
     ];
 
     // Filter the response for useful data.
-    const items: Roster = response.items
+    const items: RosterMember[] = response.items
         ?.filter((item) => item.rating > 1)
         .map((item) => ({
+            cid: item.id,
             first_name: item.name_first,
             last_name: item.name_last,
             rating: ratings[item.rating],
@@ -73,6 +78,29 @@ async function getRoster(): Promise<Roster> {
 
 export default async function ATCRoster() {
     const roster = await getRoster();
+    const { approvals } = Config;
+
+    // Generate a symbol for the given member and the position
+    const generateSymbol = (item: RosterMember, position: Position): JSX.Element => {
+        const approval = approvals.find((e) => e.cid == item.cid);
+
+        if (approval?.positions[position] == Approval.Approved)
+            return <CheckCircle2 className="mx-auto text-green-500" />;
+        if (approval?.positions[position] == Approval.ApprovedT1)
+            return <Badge className="bg-green-500">T1</Badge>;
+        if (approval?.positions[position] == Approval.ApprovedT2)
+            return <Badge className="bg-green-500">T2</Badge>;
+        if (approval?.positions[position] == Approval.ApprovedT1T2)
+            return <Badge className="bg-green-500">T1 + T2</Badge>;
+        if (approval?.positions[position] == Approval.Training)
+            return <GraduationCap className="mx-auto text-yellow-500" />;
+        if (approval?.positions[position] == Approval.TrainingT1)
+            return <Badge className="bg-yellow-500">T1</Badge>;
+        if (approval?.positions[position] == Approval.TrainingT2)
+            return <Badge className="bg-yellow-500">T2</Badge>;
+
+        return <XCircle className="mx-auto text-red-500" />;
+    };
 
     return (
         <main className="flex flex-col">
@@ -92,32 +120,56 @@ export default async function ATCRoster() {
             </section>
 
             <section className="bg-background">
-                <div className="container py-10">
+                <div className="container flex flex-col gap-2 py-10">
                     {roster?.length ? (
-                        <Table>
-                            <TableHeader>
-                                <TableRow>
-                                    <TableHead className="w-[15%]">Name</TableHead>
-                                    <TableHead className="w-0">Rating</TableHead>
-                                    <TableHead>Title</TableHead>
-                                </TableRow>
-                            </TableHeader>
-                            <TableBody>
-                                {roster.map((member, index) => (
-                                    <TableRow key={index}>
-                                        <TableCell>
-                                            {member.first_name + " " + member.last_name}
-                                        </TableCell>
-                                        <TableCell>
-                                            <Badge className={member.rating.color}>
-                                                {member.rating.short}
-                                            </Badge>
-                                        </TableCell>
-                                        <TableCell>{member.rating.long}</TableCell>
+                        <>
+                            <ATCLegend />
+
+                            <Table>
+                                <TableHeader>
+                                    <TableRow>
+                                        <TableHead className="w-[15%]">Name</TableHead>
+                                        <TableHead className="w-0">Rating</TableHead>
+                                        <TableHead className="text-center">Title</TableHead>
+                                        <TableHead className="text-center">DEL</TableHead>
+                                        <TableHead className="text-center">GND</TableHead>
+                                        <TableHead className="text-center">TWR</TableHead>
+                                        <TableHead className="text-center">APP</TableHead>
+                                        <TableHead className="text-center">CTR</TableHead>
                                     </TableRow>
-                                ))}
-                            </TableBody>
-                        </Table>
+                                </TableHeader>
+                                <TableBody>
+                                    {roster.map((member, index) => (
+                                        <TableRow key={index}>
+                                            <TableCell>
+                                                {member.first_name + " " + member.last_name}
+                                            </TableCell>
+                                            <TableCell>
+                                                <Badge className={member.rating.color}>
+                                                    {member.rating.short}
+                                                </Badge>
+                                            </TableCell>
+                                            <TableCell>{member.rating.long}</TableCell>
+                                            <TableCell className="text-center">
+                                                {generateSymbol(member, Position.DEL)}
+                                            </TableCell>
+                                            <TableCell className="text-center">
+                                                {generateSymbol(member, Position.GND)}
+                                            </TableCell>
+                                            <TableCell className="text-center">
+                                                {generateSymbol(member, Position.TWR)}
+                                            </TableCell>
+                                            <TableCell className="text-center">
+                                                {generateSymbol(member, Position.APP)}
+                                            </TableCell>
+                                            <TableCell className="text-center">
+                                                {generateSymbol(member, Position.CTR)}
+                                            </TableCell>
+                                        </TableRow>
+                                    ))}
+                                </TableBody>
+                            </Table>
+                        </>
                     ) : (
                         <h1 className="text-center text-lg">
                             Unable to retrieve ATC roster at the moment.

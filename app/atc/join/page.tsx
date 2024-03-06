@@ -15,7 +15,7 @@ export default async function ATCJoin() {
                             Do you have what it takes?
                         </h1>
                         <h2 className="text-center opacity-65">
-                            Control the skies with us. More information below.
+                            Control the largest airspace in the Middle East. More information below.
                         </h2>
                     </div>
                 </div>

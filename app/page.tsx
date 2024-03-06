@@ -57,9 +57,9 @@ export default async function Home() {
             <section className="bg-green-900">
                 <div className="container flex flex-col items-center gap-6 py-10">
                     <h1 className="text-4xl">Join us today!</h1>
-                    <p>
-                        Join our Discord server and be a part of controlling the airspaces over the
-                        Kingdom of Saudi Arabia
+                    <p className="text-center">
+                        Connect with like-minded individuals and experience the thrill of
+                        controlling the skies over the Kingdom of Saudi Arabia firsthand.
                     </p>
                     <a
                         href={Config.links.discord.saudi}

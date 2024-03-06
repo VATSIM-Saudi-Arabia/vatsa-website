@@ -1,8 +1,12 @@
 import type { SiteConfig } from "@/types/config";
+import { Approval } from "@/types";
 
 const siteConfig: SiteConfig = {
+    // Site information
     title: "VATSIM Saudi Arabia",
     description: "Saudi Arabian VATSIM vACC.",
+
+    // Hero subheadings
     subheadings: [
         "Watching the skies over the vast deserts of the Kingdom of Saudi Arabia.",
         "Experience the thrill of managing Saudi Arabian airspace with VATSIM Saudi Arabia.",
@@ -10,13 +14,19 @@ const siteConfig: SiteConfig = {
         "We are the largest airspace in the Middle East Region.",
         "We are VATSIM Saudi Arabia.",
     ],
+
+    // Social links
     links: {
         discord: {
-            mena: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
-            saudi: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+            mena: "https://discord.com/invite/Hvxm5Ky",
+            saudi: "https://discord.com/invite/p9yn5rXjU2",
         },
     },
+
+    // Policy files
     policies: [{ name: "GDPR Policy", link: "/assets/files/policies/GDPR.pdf" }],
+
+    // Staff list
     staff: [
         {
             code: "ACCSA1",
@@ -90,6 +100,27 @@ const siteConfig: SiteConfig = {
             name: "Thomas Osman",
             email: "ptd@vatsimsa.com",
         },
+    ],
+
+    // ATC roster approvals
+    approvals: [
+        // {
+        //     cid: 1514902,
+        //     positions: {
+        //         del: Approval.Approved,
+        //         gnd: Approval.ApprovedT1,
+        //         twr: Approval.ApprovedT2,
+        //         app: Approval.ApprovedT1T2,
+        //     },
+        // },
+        // {
+        //     cid: 1543984,
+        //     positions: {
+        //         del: Approval.Training,
+        //         gnd: Approval.TrainingT1,
+        //         twr: Approval.TrainingT1,
+        //     },
+        // },
     ],
 };
 

@@ -1,4 +1,4 @@
-import type { Staff } from ".";
+import type { Staff, Position, Approval } from ".";
 
 export type SiteConfig = {
     title: string;
@@ -15,4 +15,8 @@ export type SiteConfig = {
         link: string;
     }[];
     staff: Staff[];
+    approvals: {
+        cid: number;
+        positions: { [key in Position]?: Approval };
+    }[];
 };

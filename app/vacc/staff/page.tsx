@@ -15,7 +15,7 @@ import { buttonVariants } from "@/components/ui/button";
 import { Shield, ExternalLink } from "lucide-react";
 
 export default function vACCStaff() {
-    const staff = Config.staff;
+    const { staff } = Config;
 
     return (
         <main className="flex flex-col">
@@ -60,8 +60,7 @@ export default function vACCStaff() {
                                                     "flex items-center gap-2 w-[100%] hover:opacity-50"
                                                 )}
                                             >
-                                                Apply
-                                                <ExternalLink size={15} />
+                                                Apply <ExternalLink size={15} />
                                             </Link>
                                         ) : (
                                             <Link
@@ -71,8 +70,7 @@ export default function vACCStaff() {
                                                     "flex items-center gap-2 w-[100%] hover:opacity-50"
                                                 )}
                                             >
-                                                Contact
-                                                <ExternalLink size={15} />
+                                                Contact <ExternalLink size={15} />
                                             </Link>
                                         )}
                                     </TableCell>

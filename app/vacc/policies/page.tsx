@@ -8,7 +8,7 @@ import { cn } from "@/lib/utils";
 import { Files, Eye } from "lucide-react";
 
 export default function vACCPolicies() {
-    const policies = Config.policies;
+    const { policies } = Config;
 
     return (
         <main className="flex flex-col">
