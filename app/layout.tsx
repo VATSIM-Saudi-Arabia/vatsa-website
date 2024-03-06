@@ -13,6 +13,21 @@ const mulish = Mulish({ subsets: ["latin"] });
 export const metadata: Metadata = {
     title: Config.title,
     description: Config.description,
+    openGraph: {
+        title: Config.title,
+        description: Config.description,
+        url: "https://vatsimsa.com",
+        siteName: Config.title,
+        images: [
+            {
+                url: "https://vatsimsa.com/assets/logo.png", // Must be an absolute URL
+                width: 200,
+                height: 200,
+            },
+        ],
+        locale: "en_US",
+        type: "website",
+    },
 };
 
 export default function RootLayout({
