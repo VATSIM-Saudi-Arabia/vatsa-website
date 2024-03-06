@@ -23,7 +23,7 @@ async function getRoster(): Promise<Roster> {
         next: { revalidate: 3600 },
     });
 
-    // if (!res.ok) throw new Error("Failed to fetch roster");
+    if (!res.ok) throw new Error("Failed to fetch roster");
 
     var response: MembersResponse = await res.json();
 
