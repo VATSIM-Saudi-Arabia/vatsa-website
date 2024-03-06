@@ -16,10 +16,11 @@ async function getEvents(): Promise<EventResponse> {
         next: { revalidate: 3600 },
     });
 
-    if (!res.ok) throw new Error("Failed to fetch events");
+    var response: EventResponse = await res.json();
+
+    if (!res.ok) throw new Error("Failed to fetch events: " + JSON.stringify(response));
 
     // Filter those events that includes an airport that is in Saudi Arabia
-    var response: EventResponse = await res.json();
     response.data = response.data.filter((event) =>
         event.airports.some((event) => event.icao.startsWith("OE"))
     );
