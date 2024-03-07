@@ -3,8 +3,18 @@ import Image from "next/image";
 export default async function PilotTraining() {
     return (
         <main className="flex flex-col">
-            <section className="h-screen bg-[url('/assets/backgrounds/pt.png')] bg-cover bg-no-repeat bg-center">
-                <div className="h-full bg-black/30">
+            <section className="h-screen">
+                <video
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                    className="fixed object-cover w-full h-full -z-10"
+                >
+                    <source src="/assets/backgrounds/pt.mp4" type="video/mp4" />
+                </video>
+
+                <div className="h-full bg-black/40">
                     <div className="container flex flex-col justify-center items-center h-full">
                         <Image
                             src="/assets/pt_logo.png"

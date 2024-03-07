@@ -193,7 +193,7 @@ export default async function ATCRoster() {
                                 </>
                             ) : (
                                 <h1 className="text-center text-lg">
-                                    Unable to retrieve ATC roster at the moment.
+                                    Unable to retrieve resident roster at the moment.
                                 </h1>
                             )}
                         </TabsContent>
@@ -249,7 +249,7 @@ export default async function ATCRoster() {
                                 </>
                             ) : (
                                 <h1 className="text-center text-lg">
-                                    Unable to retrieve ATC roster at the moment.
+                                    Unable to retrieve visiting roster at the moment.
                                 </h1>
                             )}
                         </TabsContent>
