@@ -1,4 +1,4 @@
-import type { Staff, Position, Approval } from ".";
+import type { Staff, RosterMember, Position, Approval } from ".";
 
 export type SiteConfig = {
     title: string;
@@ -15,8 +15,13 @@ export type SiteConfig = {
         link: string;
     }[];
     staff: Staff[];
+};
+
+export type ATCConfig = {
+    visitors: Omit<RosterMember, "rating">[];
     approvals: {
         cid: number;
         positions: { [key in Position]?: Approval };
     }[];
+    inactive: number[];
 };

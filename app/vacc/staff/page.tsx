@@ -1,4 +1,4 @@
-import Config from "@/config/site";
+import SiteConfig from "@/config/site";
 import Divider from "@/components/ui/divider";
 import {
     Table,
@@ -15,7 +15,7 @@ import { buttonVariants } from "@/components/ui/button";
 import { Shield, ExternalLink } from "lucide-react";
 
 export default function vACCStaff() {
-    const { staff } = Config;
+    const { staff } = SiteConfig;
 
     return (
         <main className="flex flex-col">

@@ -1,4 +1,4 @@
-import Config from "@/config/site";
+import SiteConfig from "@/config/site";
 import Divider from "@/components/ui/divider";
 import { buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
@@ -8,8 +8,18 @@ import Discord from "@/public/assets/icons/discord.svg";
 export default async function ATCJoin() {
     return (
         <main className="flex flex-col">
-            <section className="h-screen bg-[url('/assets/backgrounds/atc.jpg')] bg-cover bg-no-repeat bg-center">
-                <div className="h-full backdrop-blur-md">
+            <section className="h-screen">
+                <video
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                    className="fixed object-cover w-full h-full -z-10"
+                >
+                    <source src="/assets/backgrounds/atc.mov" type="video/mp4" />
+                </video>
+
+                <div className="h-full bg-black/60 z-50">
                     <div className="container flex flex-col justify-center items-center h-full">
                         <h1 className="text-4xl md:text-6xl text-center">
                             Do you have what it takes?
@@ -35,7 +45,7 @@ export default async function ATCJoin() {
                             Once your account region for VATSIM is set to Europe, Middle East, and
                             Africa (EMEA), you can create a ticket inside the{" "}
                             <a
-                                href={Config.links.discord.mena}
+                                href={SiteConfig.links.discord.mena}
                                 target="_blank"
                                 rel="noreferrer noopener"
                                 className="text-vacc-green font-bold underline hover:opacity-50"
@@ -50,7 +60,7 @@ export default async function ATCJoin() {
                             been processed.
                         </p>
                         <a
-                            href={Config.links.discord.saudi}
+                            href={SiteConfig.links.discord.saudi}
                             target="_blank"
                             rel="noreferrer noopener"
                             className={cn(

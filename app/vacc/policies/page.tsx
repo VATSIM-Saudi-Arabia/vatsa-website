@@ -1,4 +1,4 @@
-import Config from "@/config/site";
+import SiteConfig from "@/config/site";
 import Divider from "@/components/ui/divider";
 import { Card, CardHeader } from "@/components/ui/card";
 import Link from "next/link";
@@ -8,7 +8,7 @@ import { cn } from "@/lib/utils";
 import { Files, Eye } from "lucide-react";
 
 export default function vACCPolicies() {
-    const { policies } = Config;
+    const { policies } = SiteConfig;
 
     return (
         <main className="flex flex-col">

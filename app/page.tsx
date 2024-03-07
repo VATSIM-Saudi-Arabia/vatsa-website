@@ -1,6 +1,6 @@
 import type { EventResponse } from "@/types/api";
 
-import Config from "@/config/site";
+import SiteConfig from "@/config/site";
 import Typer from "@/components/Typer";
 import EventCard from "@/components/EventCard";
 import Divider from "@/components/ui/divider";
@@ -42,7 +42,7 @@ export default async function Home() {
                         </div>
 
                         <h2 className="text-md sm:text-xl">
-                            <Typer content={Config.subheadings} />
+                            <Typer content={SiteConfig.subheadings} />
                         </h2>
                     </div>
 
@@ -62,7 +62,7 @@ export default async function Home() {
                         controlling the skies over the Kingdom of Saudi Arabia firsthand.
                     </p>
                     <a
-                        href={Config.links.discord.saudi}
+                        href={SiteConfig.links.discord.saudi}
                         target="_blank"
                         rel="noreferrer noopener"
                         className={cn(buttonVariants({ variant: "secondary" }), "bg-discord")}

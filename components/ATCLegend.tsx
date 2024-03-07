@@ -7,61 +7,89 @@ import {
     AlertDialogTitle,
     AlertDialogTrigger,
 } from "./ui/alert-dialog";
+import {
+    Table,
+    TableBody,
+    TableCaption,
+    TableCell,
+    TableHead,
+    TableHeader,
+    TableRow,
+} from "@/components/ui/table";
+
 import { Button } from "./ui/button";
 import { Badge } from "./ui/badge";
 
-import { Table, CheckCircle2, XCircle, GraduationCap } from "lucide-react";
+import { Table as TableIcon, CheckCircle2, XCircle, GraduationCap } from "lucide-react";
 
 export default function ATCLegend() {
     return (
         <AlertDialog>
             <AlertDialogTrigger asChild>
                 <Button variant="outline" className="ml-auto flex items-center gap-2">
-                    Legend <Table size={15} />
+                    Legend <TableIcon size={15} />
                 </Button>
             </AlertDialogTrigger>
 
             <AlertDialogContent>
                 <AlertDialogHeader>
                     <AlertDialogTitle className="flex items-center gap-2">
-                        <Table /> ATC Legend
+                        <TableIcon /> ATC Legend
                     </AlertDialogTitle>
-
-                    <div className="flex flex-col gap-2">
-                        <div className="flex justify-center items-center gap-2">
-                            Unapproved - <XCircle className="inline text-red-500" />
-                        </div>
-
-                        <div className="flex justify-center items-center gap-2">
-                            Approved - <CheckCircle2 className="inline text-green-500" />
-                        </div>
-
-                        <div className="flex justify-center items-center gap-2">
-                            Tier 1 Approved - <Badge className="inline bg-green-500">T1</Badge>
-                        </div>
-
-                        <div className="flex justify-center items-center gap-2">
-                            Tier 2 Approved - <Badge className="inline bg-green-500">T2</Badge>
-                        </div>
-
-                        <div className="flex justify-center items-center gap-2">
-                            Tier 1 + Tier 2 Approved -{" "}
-                            <Badge className="inline bg-green-500">T1 + T2</Badge>
-                        </div>
-
-                        <div className="flex justify-center items-center gap-2">
-                            Training - <GraduationCap className="inline text-yellow-500" />
-                        </div>
-
-                        <div className="flex justify-center items-center gap-2">
-                            Tier 1 Training - <Badge className="inline bg-yellow-500">T1</Badge>
-                        </div>
-
-                        <div className="flex justify-center items-center gap-2">
-                            Tier 2 Training - <Badge className="inline bg-yellow-500">T2</Badge>
-                        </div>
-                    </div>
                 </AlertDialogHeader>
+
+                <Table className="mx-auto">
+                    <TableBody className="[&_td:first-child]:w-[20%] [&_td]:p-2">
+                        <TableRow>
+                            <TableCell>
+                                <XCircle className="inline text-red-500" />
+                            </TableCell>
+                            <TableCell>Unapproved</TableCell>
+                        </TableRow>
+                        <TableRow>
+                            <TableCell>
+                                <CheckCircle2 className="inline text-green-500" />
+                            </TableCell>
+                            <TableCell>Approved</TableCell>
+                        </TableRow>
+                        <TableRow>
+                            <TableCell>
+                                <Badge className="inline bg-green-500">T1</Badge>
+                            </TableCell>
+                            <TableCell>Tier 1 Approved</TableCell>
+                        </TableRow>
+                        <TableRow>
+                            <TableCell>
+                                <Badge className="inline bg-green-500">T2</Badge>
+                            </TableCell>
+                            <TableCell>Tier 2 Approved</TableCell>
+                        </TableRow>
+                        <TableRow>
+                            <TableCell>
+                                <Badge className="inline bg-green-500">T1 + T2</Badge>
+                            </TableCell>
+                            <TableCell>Tier 1 + Tier 2 Approved</TableCell>
+                        </TableRow>
+                        <TableRow>
+                            <TableCell>
+                                <GraduationCap className="inline text-yellow-500" />
+                            </TableCell>
+                            <TableCell>Training</TableCell>
+                        </TableRow>
+                        <TableRow>
+                            <TableCell>
+                                <Badge className="inline bg-yellow-500">T1</Badge>
+                            </TableCell>
+                            <TableCell>Tier 1 Training</TableCell>
+                        </TableRow>
+                        <TableRow>
+                            <TableCell>
+                                <Badge className="inline bg-yellow-500">T2</Badge>
+                            </TableCell>
+                            <TableCell>Tier 2 Training</TableCell>
+                        </TableRow>
+                    </TableBody>
+                </Table>
 
                 <AlertDialogFooter>
                     <AlertDialogCancel>Close</AlertDialogCancel>

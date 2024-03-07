@@ -1,7 +1,4 @@
 import type { SiteConfig } from "@/types/config";
-// import { Approval } from "@/types";
-
-// Separate configs in the future
 
 const siteConfig: SiteConfig = {
     // Site information
@@ -26,7 +23,7 @@ const siteConfig: SiteConfig = {
     },
 
     // Policy files
-    policies: [{ name: "GDPR Policy", link: "/assets/files/policies/GDPR.pdf" }],
+    policies: [{ name: "GDPR Policy", link: "https://cdn.vatsimsa.com/files/gdpr.pdf" }],
 
     // Staff list
     staff: [
@@ -102,27 +99,6 @@ const siteConfig: SiteConfig = {
             name: "Thomas Osman",
             email: "ptd@vatsimsa.com",
         },
-    ],
-
-    // ATC roster approvals
-    approvals: [
-        // {
-        //     cid: 1514902,
-        //     positions: {
-        //         del: Approval.Approved,
-        //         gnd: Approval.ApprovedT1,
-        //         twr: Approval.ApprovedT2,
-        //         app: Approval.ApprovedT1T2,
-        //     },
-        // },
-        // {
-        //     cid: 1543984,
-        //     positions: {
-        //         del: Approval.Training,
-        //         gnd: Approval.TrainingT1,
-        //         twr: Approval.TrainingT1,
-        //     },
-        // },
     ],
 };
 

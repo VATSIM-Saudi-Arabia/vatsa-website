@@ -2,7 +2,7 @@ import "./globals.css";
 
 import type { Metadata, Viewport } from "next";
 
-import Config from "@/config/site";
+import SiteConfig from "@/config/site";
 import Header from "@/components/header/main-header";
 import Footer from "@/components/footer/main-footer";
 import { Mulish } from "next/font/google";
@@ -11,13 +11,13 @@ import { cn } from "@/lib/utils";
 const mulish = Mulish({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-    title: Config.title,
-    description: Config.description,
+    title: SiteConfig.title,
+    description: SiteConfig.description,
     openGraph: {
-        title: Config.title,
-        description: Config.description,
+        title: SiteConfig.title,
+        description: SiteConfig.description,
         url: "https://vatsimsa.com",
-        siteName: Config.title,
+        siteName: SiteConfig.title,
         images: [
             {
                 url: "https://vatsimsa.com/assets/logo.png",
@@ -32,6 +32,7 @@ export const metadata: Metadata = {
 
 export const viewport: Viewport = {
     themeColor: "#16a34a",
+    colorScheme: "dark",
 };
 
 export default function RootLayout({
