@@ -70,6 +70,7 @@ async function getRoster(): Promise<RosterMember[]> {
             cid: item.id,
             first_name: item.name_first,
             last_name: item.name_last,
+            rating_id: item.rating,
             rating: ratings[item.rating],
         }));
 
@@ -84,7 +85,7 @@ export default async function ATCRoster() {
     const generateSymbol = (item: RosterMember, position: Position): JSX.Element => {
         const approval = approvals.find((e) => e.cid == item.cid);
 
-        if (approval?.positions[position] == Approval.Approved)
+        if (approval?.positions[position] == Approval.Approved || item.rating_id >= 5)
             return <CheckCircle2 className="mx-auto text-green-500" />;
         if (approval?.positions[position] == Approval.ApprovedT1)
             return <Badge className="bg-green-500">T1</Badge>;

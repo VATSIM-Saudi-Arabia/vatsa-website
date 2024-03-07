@@ -17,6 +17,7 @@ export type RosterMember = {
     cid: number;
     first_name: string;
     last_name: string;
+    rating_id: number;
     rating: {
         short: string;
         long: string;
