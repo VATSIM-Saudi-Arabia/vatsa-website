@@ -7,6 +7,7 @@ export type Event = {
 };
 
 export type Staff = {
+    cid: number;
     code: string;
     title: string;
     name: string;

@@ -40,6 +40,7 @@ export default function vACCStaff() {
                         <TableHeader>
                             <TableRow>
                                 <TableHead className="w-0">Code</TableHead>
+                                <TableHead className="w-0">CID</TableHead>
                                 <TableHead className="w-[25%]">Title</TableHead>
                                 <TableHead>Name</TableHead>
                                 <TableHead className="w-[20%]">Contact</TableHead>
@@ -49,6 +50,7 @@ export default function vACCStaff() {
                             {staff.map((member, index) => (
                                 <TableRow key={index}>
                                     <TableCell className="font-medium">{member.code}</TableCell>
+                                    <TableCell>{member.cid || "N/A"}</TableCell>
                                     <TableCell>{member.title}</TableCell>
                                     <TableCell>{member.name}</TableCell>
                                     <TableCell>
