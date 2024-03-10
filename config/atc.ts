@@ -1,5 +1,5 @@
 import type { ATCConfig } from "@/types/config";
-// import { Approval } from "@/types";
+import { Approval } from "@/types";
 
 const atcConfig: ATCConfig = {
     visitors: [
@@ -20,12 +20,6 @@ const atcConfig: ATCConfig = {
             first_name: "Rashid",
             last_name: "Raikhy",
             rating_id: 10,
-        },
-        {
-            cid: 1442675,
-            first_name: "Tran",
-            last_name: "Gia Huy",
-            rating_id: 4,
         },
         {
             cid: 1601155,
@@ -79,28 +73,311 @@ const atcConfig: ATCConfig = {
 
     // ATC roster approvals
     approvals: [
-        // {
-        //     cid: 1514902,
-        //     positions: {
-        //         del: Approval.Approved,
-        //         gnd: Approval.ApprovedT1,
-        //         twr: Approval.ApprovedT2,
-        //         app: Approval.ApprovedT1T2,
-        //     },
-        // },
-        // {
-        //     cid: 1543984,
-        //     positions: {
-        //         del: Approval.Training,
-        //         gnd: Approval.TrainingT1,
-        //         twr: Approval.TrainingT1,
-        //     },
-        // },
-    ],
+                {
+                    cid: 1344871,
+                    positions: {
+                        del: Approval.Approved,
+                        gnd: Approval.Approved,
+                        twr: Approval.Approved,
+                        app: Approval.Approved,
+                        ctr: Approval.Approved
+                    }
+                },
+                {
+                    cid: 1621439,
+                    positions: {
+                        del: Approval.Approved,
+                        gnd: Approval.Approved,
+                    }
+                },
+                {
+                    cid: 1581461,
+                    positions: {
+                        del: Approval.Approved,
+                        gnd: Approval.Approved,
+                        twr: Approval.Approved
+                    }
+                },
+                {
+                    cid: 1665565,
+                    positions: {
+                        del: Approval.Approved,
+                        gnd: Approval.Approved,
+                        twr: Approval.Training
+                    }
+                },
+                {
+                    cid: 1610046,
+                    positions: {
+                        del: Approval.Approved,
+                        gnd: Approval.Approved,
+                        twr: Approval.Approved,
+                        app: Approval.Approved,
+                        ctr: Approval.Approved
+                    }
+                },
+                {
+                    cid: 1465729,
+                    positions: {
+                        del: Approval.Approved,
+                        gnd: Approval.Approved,
+                        twr: Approval.Approved
+                    }
+                },
+                {
+                    cid: 1514902,
+                    positions: {
+                        del: Approval.Approved,
+                        gnd: Approval.Approved,
+                        twr: Approval.Training
+                    }
+                },
+                {
+                    cid: 1409617,
+                    positions: {
+                        del: Approval.Approved,
+                        gnd: Approval.Approved,
+                        twr: Approval.Approved,
+                        app: Approval.Approved,
+                        ctr: Approval.Approved
+                    }
+                },
+                {
+                    cid: 1404713,
+                    positions: {
+                        del: Approval.Approved,
+                        gnd: Approval.Approved,
+                        twr: Approval.Approved,
+                        app: Approval.Approved,
+                        ctr: Approval.Approved
+                    }
+                },
+                {
+                    cid: 1543984,
+                    positions: {
+                        del: Approval.Approved,
+                        gnd: Approval.Approved,
+                        twr: Approval.Approved,
+                        app: Approval.Approved,
+                        ctr: Approval.Approved
+                    }
+                },
+                {
+                    cid: 1600052,
+                    positions: {
+                        del: Approval.Approved,
+                        gnd: Approval.Approved
+                    }
+                },
+                {
+                    cid: 1262584,
+                    positions: {
+                        del: Approval.Approved,
+                        gnd: Approval.Approved,
+                        twr: Approval.Approved,
+                        app: Approval.Approved,
+                        ctr: Approval.Approved
+                    }
+                },
+                {
+                    cid: 1328668,
+                    positions: {
+                        del: Approval.Approved,
+                        gnd: Approval.Approved
+                    }
+                },
+                {
+                    cid: 1495940,
+                    positions: {
+                        del: Approval.Approved,
+                        gnd: Approval.Approved
+                    }
+                },
+                {
+                    cid: 1522418,
+                    positions: {
+                        del: Approval.Approved,
+                        gnd: Approval.Approved
+                    }
+                },
+                {
+                    cid: 1506586,
+                    positions: {
+                        del: Approval.Approved,
+                        gnd: Approval.Approved
+                    }
+                },
+                {
+                    cid: 1327111,
+                    positions: {
+                        del: Approval.Approved,
+                        gnd: Approval.Approved
+                    }
+                },
+                {
+                    cid: 1516924,
+                    positions: {
+                        del: Approval.Approved,
+                        gnd: Approval.Approved,
+                        twr: Approval.Approved
+                    }
+                },
+                {
+                    cid: 1612975,
+                    positions: {
+                        del: Approval.Approved,
+                        gnd: Approval.Approved
+                    }
+                },
+                {
+                    cid: 1120988,
+                    positions: {
+                        del: Approval.Approved,
+                        gnd: Approval.Approved,
+                        twr: Approval.Approved,
+                        app: Approval.Approved,
+                    }
+                },
+                {
+                    cid: 1402301,
+                    positions: {
+                        del: Approval.Approved,
+                        gnd: Approval.Approved,
+                    }
+                },
+                {
+                    cid: 1424752,
+                    positions: {
+                        del: Approval.Approved,
+                        gnd: Approval.Approved,
+                    }
+                },
+                {
+                    cid: 1340014,
+                    positions: {
+                        del: Approval.Approved,
+                        gnd: Approval.Approved,
+                    }
+                },
+                {
+                    cid: 1281279,
+                    positions: {
+                        del: Approval.Approved,
+                        gnd: Approval.Approved,
+                        twr: Approval.Approved,
+                    }
+                },
+                {
+                    cid: 1601155,
+                    positions: {
+                        del: Approval.Approved,
+                        gnd: Approval.Approved,
+                    }
+                },
+                {
+                    cid: 1503241,
+                    positions: {
+                        del: Approval.Approved,
+                        gnd: Approval.Approved,
+                        twr: Approval.Approved,
+                        app: Approval.Approved,
+                        ctr: Approval.Approved,
+                    }
+                },
+                {
+                    cid: 1590527,
+                    positions: {
+                        del: Approval.Approved,
+                        gnd: Approval.Approved,
+                    }
+                },
+                {
+                    cid: 1496933,
+                    positions: {
+                        del: Approval.Approved,
+                        gnd: Approval.Approved,
+                    }
+                },
+                {
+                    cid: 1542212,
+                    positions: {
+                        del: Approval.Approved,
+                        gnd: Approval.Approved,
+                    }
+                },
+                {
+                    cid: 1434781,
+                    positions: {
+                        del: Approval.Approved,
+                        gnd: Approval.Approved,
+                        twr: Approval.Approved,
+                    }
+                },
+                {
+                    cid: 1523442,
+                    positions: {
+                        del: Approval.Approved,
+                        gnd: Approval.Approved,
+                        twr: Approval.Approved,
+                    }
+                },
+                {
+                    cid: 1442675,
+                    positions: {
+                        del: Approval.Approved,
+                        gnd: Approval.Approved,
+                        twr: Approval.Approved,
+                        app: Approval.Training,
+                    }
+                },
+                {
+                    cid: 1495440,
+                    positions: {
+                        del: Approval.Approved,
+                        gnd: Approval.Approved,
+                    }
+                },
+                {
+                    cid: 1663421,
+                    positions: {
+                        del: Approval.Approved,
+                        gnd: Approval.Approved,
+                        twr: Approval.Solo,
+                    }
+                },
+                {
+                    cid: 1744576,
+                    positions: {
+                        del: Approval.Approved,
+                        gnd: Approval.Training,
+                    }
+                },
+                {
+                    cid: 1477790,
+                    positions: {
+                        del: Approval.Training,
+                        gnd: Approval.Training,
+                    }
+                },
+                {
+                    cid: 1323685,
+                    positions: {
+                        del: Approval.Training,
+                        gnd: Approval.Training,
+                    }
+                }
+        
+        ],
 
     // Inactive atc members
     inactive: [
-        // 1514902
+        1366935,
+        1564275,
+        1327111,
+        1526156,
+        1495940,
+        1492904,
+        1259821,
     ],
 };
 

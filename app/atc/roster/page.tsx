@@ -112,6 +112,8 @@ export default async function ATCRoster() {
             return <Badge className="bg-yellow-500">T1</Badge>;
         if (approval?.positions[position] == Approval.TrainingT2)
             return <Badge className="bg-yellow-500">T2</Badge>;
+        if (approval?.positions[position] == Approval.Solo)
+            return <Badge className="bg-orange-500">Solo</Badge>;
 
         return <XCircle className="mx-auto text-red-500" />;
     };
