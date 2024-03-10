@@ -42,4 +42,5 @@ export enum Approval {
     Training,
     TrainingT1,
     TrainingT2,
+    Solo,
 }
