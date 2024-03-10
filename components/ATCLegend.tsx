@@ -22,6 +22,7 @@ import { Badge } from "./ui/badge";
 
 import { Table as TableIcon, CheckCircle2, XCircle, GraduationCap } from "lucide-react";
 
+
 export default function ATCLegend() {
     return (
         <AlertDialog>
@@ -87,6 +88,12 @@ export default function ATCLegend() {
                                 <Badge className="inline bg-yellow-500">T2</Badge>
                             </TableCell>
                             <TableCell>Tier 2 Training</TableCell>
+                        </TableRow>
+                        <TableRow>
+                            <TableCell>
+                                <Badge className="inline bg-orange-500">Solo</Badge>
+                            </TableCell>
+                            <TableCell>Solo Validation. More Information <a href="https://staff.vatsim.me/solos" style={{ color: "blue" }}>here.</a> </TableCell>
                         </TableRow>
                     </TableBody>
                 </Table>
