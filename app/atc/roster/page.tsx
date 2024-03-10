@@ -1,5 +1,5 @@
 import { type RosterMember, Position, Approval } from "@/types";
-import type { MembersResponse } from "@/types/api";
+import { type MembersResponse, Rating } from "@/types/api";
 
 import ATCConfig from "@/config/atc";
 import Divider from "@/components/ui/divider";
@@ -67,7 +67,7 @@ async function getRoster(): Promise<RosterMember[]> {
     // Filter the response for useful data.
     const { inactive } = ATCConfig;
     const items: RosterMember[] = response.items
-        ?.filter((item) => !inactive.includes(item.id) && item.rating > 1)
+        ?.filter((item) => !inactive.includes(item.id) && item.rating > Rating.OBS)
         .map((item) => ({
             cid: item.id,
             first_name: item.name_first,

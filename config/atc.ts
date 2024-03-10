@@ -1,4 +1,5 @@
 import type { ATCConfig } from "@/types/config";
+import { Rating } from "@/types/api";
 import { Approval } from "@/types";
 
 const atcConfig: ATCConfig = {
@@ -7,67 +8,67 @@ const atcConfig: ATCConfig = {
             cid: 1516924,
             first_name: "Emir",
             last_name: "Dhil-Maanli",
-            rating_id: 8,
+            rating_id: Rating.I1,
         },
         {
             cid: 1120988,
             first_name: "Fatih Mutlu",
             last_name: "Timurcioglu",
-            rating_id: 11,
+            rating_id: Rating.SUP,
         },
         {
             cid: 1503241,
             first_name: "Rashid",
             last_name: "Raikhy",
-            rating_id: 10,
+            rating_id: Rating.I3,
         },
         {
             cid: 1601155,
             first_name: "Rahul",
             last_name: "Chakraborty",
-            rating_id: 11,
+            rating_id: Rating.SUP,
         },
         {
             cid: 1281279,
             first_name: "Parham",
             last_name: "Fooladvand",
-            rating_id: 5,
+            rating_id: Rating.C1,
         },
         {
             cid: 1612975,
             first_name: "Enrico",
             last_name: "Nicholas",
-            rating_id: 4,
+            rating_id: Rating.S3,
         },
         {
             cid: 1495440,
             first_name: "Tshepo",
             last_name: "Lekata",
-            rating_id: 4,
+            rating_id: Rating.S3,
         },
         {
             cid: 1496933,
             first_name: "Rayan",
             last_name: "Javed",
-            rating_id: 3,
+            rating_id: Rating.S2,
         },
         {
             cid: 1542212,
             first_name: "Riviru",
             last_name: "Gunasinghe",
-            rating_id: 3,
+            rating_id: Rating.S3,
         },
         {
             cid: 1434781,
             first_name: "Samuel",
             last_name: "Hepworth",
-            rating_id: 4,
+            rating_id: Rating.S3,
         },
         {
             cid: 1424752,
             first_name: "Muhammad",
             last_name: "Abdullah",
-            rating_id: 5,
+            rating_id: Rating.C1,
         },
     ],
 
