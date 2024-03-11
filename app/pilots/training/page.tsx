@@ -37,22 +37,17 @@ export default async function PilotTraining() {
             <section className="bg-background">
                 <div className="container flex flex-col gap-6 py-10">
                     <div className="flex flex-col gap-4">
-                        <div>
-                            <h2 className="text-4xl text-vacc-green">Ready to join?</h2>
-                            <h3 className="text-sm opacity-50">💀 and wait 7 months for training??!! 💀</h3>
-                        </div>
+                        <h2 className="text-4xl text-vacc-green">Ready to join?</h2>
 
                         <div className="flex justify-center gap-4">
                             <Card>
-                                <CardHeader>Ismail</CardHeader>
+                                <CardHeader>Lorem Ipsum</CardHeader>
                             </Card>
 
                             <Card>
-                                <CardHeader>Gay</CardHeader>
+                                <CardHeader>Lorem Ipsum</CardHeader>
                             </Card>
                         </div>
-
-                        <p className="text-center">To be continued after my S2......</p>
                     </div>
                 </div>
             </section>
@@ -74,12 +69,7 @@ export default async function PilotTraining() {
             <section className="bg-background">
                 <div className="container flex flex-col gap-6 py-10">
                     <div className="flex flex-col gap-4">
-                        <div>
-                            <h2 className="text-4xl text-vacc-green">Ready to join?</h2>
-                            <h3 className="text-sm opacity-50">💀 and wait 7 months for training??!! 💀</h3>
-                        </div>
-
-                        <p className="text-center">To be continued after my S2......</p>
+                        <h2 className="text-4xl text-vacc-green">Lorem Ipsum</h2>
                     </div>
                 </div>
             </section>
