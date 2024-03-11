@@ -39,10 +39,7 @@ export default function vACCPolicies() {
 
                                 <Link
                                     href="/assets/files/policies/GDPR.pdf"
-                                    className={cn(
-                                        buttonVariants({ variant: "secondary" }),
-                                        "flex items-center gap-2"
-                                    )}
+                                    className={cn(buttonVariants({ variant: "secondary" }), "flex items-center gap-2")}
                                 >
                                     View
                                     <Eye size={15} />

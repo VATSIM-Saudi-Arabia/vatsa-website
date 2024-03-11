@@ -2,12 +2,7 @@ import type { Config } from "tailwindcss";
 
 const config = {
     darkMode: ["class"],
-    content: [
-        "./pages/**/*.{ts,tsx}",
-        "./components/**/*.{ts,tsx}",
-        "./app/**/*.{ts,tsx}",
-        "./src/**/*.{ts,tsx}",
-    ],
+    content: ["./pages/**/*.{ts,tsx}", "./components/**/*.{ts,tsx}", "./app/**/*.{ts,tsx}", "./src/**/*.{ts,tsx}"],
     prefix: "",
     theme: {
         container: {
@@ -53,7 +48,16 @@ const config = {
                     foreground: "hsl(var(--card-foreground))",
                 },
                 vacc: {
-                    green: "#16a34a",
+                    green: {
+                        DEFAULT: "#16a34a",
+                        light: "#70b953",
+                    },
+                    blue: {
+                        DEFAULT: "#70b3ed",
+                        dark: "#2f3e90",
+                    },
+                    red: "#b35b5a",
+                    yellow: "#eac33d",
                 },
                 discord: "#7289da",
             },

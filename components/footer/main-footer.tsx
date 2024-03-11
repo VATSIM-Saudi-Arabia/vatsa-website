@@ -36,10 +36,7 @@ export default function Footer() {
                         <Separator />
 
                         <nav className="flex flex-col">
-                            <Link
-                                href="/pilots/training"
-                                className="flex items-center gap-2 hover:opacity-50"
-                            >
+                            <Link href="/pilots/training" className="flex items-center gap-2 hover:opacity-50">
                                 <GraduationCap size={15} /> Pilot Training
                             </Link>
 
@@ -78,17 +75,11 @@ export default function Footer() {
                         <Separator />
 
                         <nav className="flex flex-col">
-                            <Link
-                                href="/atc/join"
-                                className="flex items-center gap-2 hover:opacity-50"
-                            >
+                            <Link href="/atc/join" className="flex items-center gap-2 hover:opacity-50">
                                 <TowerControl size={15} /> Become ATC
                             </Link>
 
-                            <Link
-                                href="/atc/roster"
-                                className="flex items-center gap-2 hover:opacity-50"
-                            >
+                            <Link href="/atc/roster" className="flex items-center gap-2 hover:opacity-50">
                                 <Users size={15} /> ATC Roster
                             </Link>
 
@@ -117,17 +108,11 @@ export default function Footer() {
                         <Separator />
 
                         <nav className="flex flex-col">
-                            <Link
-                                href="/vacc/staff"
-                                className="flex items-center gap-2 hover:opacity-50"
-                            >
+                            <Link href="/vacc/staff" className="flex items-center gap-2 hover:opacity-50">
                                 <Shield size={15} /> Staff
                             </Link>
 
-                            <Link
-                                href="/vacc/policies"
-                                className="flex items-center gap-2 hover:opacity-50"
-                            >
+                            <Link href="/vacc/policies" className="flex items-center gap-2 hover:opacity-50">
                                 <Files size={15} /> Policies
                             </Link>
                         </nav>

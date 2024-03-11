@@ -7,15 +7,7 @@ import {
     AlertDialogTitle,
     AlertDialogTrigger,
 } from "./ui/alert-dialog";
-import {
-    Table,
-    TableBody,
-    TableCaption,
-    TableCell,
-    TableHead,
-    TableHeader,
-    TableRow,
-} from "@/components/ui/table";
+import { Table, TableBody, TableCaption, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 
 import { Button } from "./ui/button";
 import { Badge } from "./ui/badge";
@@ -96,10 +88,7 @@ export default function ATCLegend() {
                                 Solo Validation
                                 <p className="text-sm opacity-50">
                                     More Information{" "}
-                                    <a
-                                        href="https://staff.vatsim.me/solos"
-                                        className="underline hover:opacity-25"
-                                    >
+                                    <a href="https://staff.vatsim.me/solos" className="underline hover:opacity-25">
                                         here
                                     </a>
                                     .

@@ -5,14 +5,7 @@ import ATCConfig from "@/config/atc";
 import Divider from "@/components/ui/divider";
 import ATCLegend from "@/components/ATCLegend";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import {
-    Table,
-    TableBody,
-    TableCell,
-    TableHead,
-    TableHeader,
-    TableRow,
-} from "@/components/ui/table";
+import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import { Badge } from "@/components/ui/badge";
 
 import { Users, CheckCircle2, XCircle, GraduationCap } from "lucide-react";
@@ -46,8 +39,7 @@ async function getRoster(): Promise<RosterMember[]> {
     // Get an initial response for the count of total members
     var initial: MembersResponse = await initial_res.json();
 
-    if (!initial_res.ok)
-        throw new Error("Failed to fetch initial roster: " + JSON.stringify(initial));
+    if (!initial_res.ok) throw new Error("Failed to fetch initial roster: " + JSON.stringify(initial));
 
     // Use the count from the initial response to fetch all members
     const count = initial.count;
@@ -96,24 +88,18 @@ export default async function ATCRoster() {
     const generateSymbol = (item: RosterMember, position: Position): JSX.Element => {
         const approval = approvals.find((e) => e.cid == item.cid);
 
-        if (!approval && item.rating_id >= 5)
-            return <CheckCircle2 className="mx-auto text-green-500" />;
+        if (!approval && item.rating_id >= 5) return <CheckCircle2 className="mx-auto text-green-500" />;
         if (approval?.positions[position] == Approval.Approved)
             return <CheckCircle2 className="mx-auto text-green-500" />;
-        if (approval?.positions[position] == Approval.ApprovedT1)
-            return <Badge className="bg-green-500">T1</Badge>;
-        if (approval?.positions[position] == Approval.ApprovedT2)
-            return <Badge className="bg-green-500">T2</Badge>;
+        if (approval?.positions[position] == Approval.ApprovedT1) return <Badge className="bg-green-500">T1</Badge>;
+        if (approval?.positions[position] == Approval.ApprovedT2) return <Badge className="bg-green-500">T2</Badge>;
         if (approval?.positions[position] == Approval.ApprovedT1T2)
             return <Badge className="bg-green-500">T1 + T2</Badge>;
         if (approval?.positions[position] == Approval.Training)
             return <GraduationCap className="mx-auto text-yellow-500" />;
-        if (approval?.positions[position] == Approval.TrainingT1)
-            return <Badge className="bg-yellow-500">T1</Badge>;
-        if (approval?.positions[position] == Approval.TrainingT2)
-            return <Badge className="bg-yellow-500">T2</Badge>;
-        if (approval?.positions[position] == Approval.Solo)
-            return <Badge className="bg-orange-500">Solo</Badge>;
+        if (approval?.positions[position] == Approval.TrainingT1) return <Badge className="bg-yellow-500">T1</Badge>;
+        if (approval?.positions[position] == Approval.TrainingT2) return <Badge className="bg-yellow-500">T2</Badge>;
+        if (approval?.positions[position] == Approval.Solo) return <Badge className="bg-orange-500">Solo</Badge>;
 
         return <XCircle className="mx-auto text-red-500" />;
     };
@@ -164,9 +150,7 @@ export default async function ATCRoster() {
                                             {residents.map((member, index) => (
                                                 <TableRow key={index}>
                                                     <TableCell>{member.cid}</TableCell>
-                                                    <TableCell>
-                                                        {member.first_name + " " + member.last_name}
-                                                    </TableCell>
+                                                    <TableCell>{member.first_name + " " + member.last_name}</TableCell>
                                                     <TableCell>
                                                         <Badge className={member.rating.color}>
                                                             {member.rating.short}
@@ -220,9 +204,7 @@ export default async function ATCRoster() {
                                             {filteredVisitors.map((member, index) => (
                                                 <TableRow key={index}>
                                                     <TableCell>{member.cid}</TableCell>
-                                                    <TableCell>
-                                                        {member.first_name + " " + member.last_name}
-                                                    </TableCell>
+                                                    <TableCell>{member.first_name + " " + member.last_name}</TableCell>
                                                     <TableCell>
                                                         <Badge className={member.rating.color}>
                                                             {member.rating.short}

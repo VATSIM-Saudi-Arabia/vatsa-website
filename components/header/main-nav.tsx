@@ -46,10 +46,7 @@ export default function MainNav() {
             </Link>
 
             <div className="hidden sm:flex items-center gap-2">
-                <Link
-                    href="/"
-                    className={cn(buttonVariants({ variant: "link" }), "flex items-center gap-2")}
-                >
+                <Link href="/" className={cn(buttonVariants({ variant: "link" }), "flex items-center gap-2")}>
                     <Home size={15} /> Home
                 </Link>
 
@@ -195,10 +192,7 @@ export default function MainNav() {
                                 <DropdownMenuContent>
                                     <DropdownMenuItem asChild>
                                         <DrawerClose asChild>
-                                            <Link
-                                                href="/pilots/training"
-                                                className="flex items-center gap-2"
-                                            >
+                                            <Link href="/pilots/training" className="flex items-center gap-2">
                                                 <GraduationCap size={15} /> Pilot Training
                                             </Link>
                                         </DrawerClose>
@@ -256,10 +250,7 @@ export default function MainNav() {
                                 <DropdownMenuContent>
                                     <DropdownMenuItem asChild>
                                         <DrawerClose asChild>
-                                            <Link
-                                                href="/atc/join"
-                                                className="flex items-center gap-2"
-                                            >
+                                            <Link href="/atc/join" className="flex items-center gap-2">
                                                 <TowerControl size={15} /> Become ATC
                                             </Link>
                                         </DrawerClose>
@@ -269,10 +260,7 @@ export default function MainNav() {
 
                                     <DropdownMenuItem asChild>
                                         <DrawerClose asChild>
-                                            <Link
-                                                href="/atc/roster"
-                                                className="flex items-center gap-2"
-                                            >
+                                            <Link href="/atc/roster" className="flex items-center gap-2">
                                                 <Users size={15} /> ATC Roster
                                             </Link>
                                         </DrawerClose>
@@ -280,10 +268,7 @@ export default function MainNav() {
 
                                     <DropdownMenuItem asChild>
                                         <DrawerClose asChild>
-                                            <Link
-                                                href="/atc/feedback"
-                                                className="flex items-center gap-2"
-                                            >
+                                            <Link href="/atc/feedback" className="flex items-center gap-2">
                                                 <MessageCircleHeart size={15} />
                                                 Feedback
                                             </Link>
@@ -314,10 +299,7 @@ export default function MainNav() {
                                 <DropdownMenuContent>
                                     <DropdownMenuItem asChild>
                                         <DrawerClose asChild>
-                                            <Link
-                                                href="/vacc/staff"
-                                                className="flex items-center gap-2"
-                                            >
+                                            <Link href="/vacc/staff" className="flex items-center gap-2">
                                                 <Shield size={15} /> Staff
                                             </Link>
                                         </DrawerClose>
@@ -325,10 +307,7 @@ export default function MainNav() {
 
                                     <DropdownMenuItem asChild>
                                         <DrawerClose asChild>
-                                            <Link
-                                                href="/vacc/policies"
-                                                className="flex items-center gap-2"
-                                            >
+                                            <Link href="/vacc/policies" className="flex items-center gap-2">
                                                 <Files size={15} /> Policies
                                             </Link>
                                         </DrawerClose>

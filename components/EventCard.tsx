@@ -24,9 +24,7 @@ export default function EventCard({ link, title, type, date, image_url }: Event)
                     />
                 </CardContent>
                 <CardHeader>
-                    <CardTitle className="whitespace-nowrap overflow-hidden text-ellipsis">
-                        {title}
-                    </CardTitle>
+                    <CardTitle className="whitespace-nowrap overflow-hidden text-ellipsis">{title}</CardTitle>
                     <CardDescription>{type + " • " + date}</CardDescription>
                 </CardHeader>
             </Card>

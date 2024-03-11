@@ -1,13 +1,6 @@
 import SiteConfig from "@/config/site";
 import Divider from "@/components/ui/divider";
-import {
-    Table,
-    TableBody,
-    TableCell,
-    TableHead,
-    TableHeader,
-    TableRow,
-} from "@/components/ui/table";
+import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
 import { buttonVariants } from "@/components/ui/button";
@@ -46,7 +39,7 @@ export default function vACCStaff() {
                                 <TableHead className="w-[20%]">Contact</TableHead>
                             </TableRow>
                         </TableHeader>
-                        
+
                         <TableBody>
                             {staff.map((member, index) => (
                                 <TableRow key={index}>
