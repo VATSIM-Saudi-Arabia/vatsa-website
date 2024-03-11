@@ -130,13 +130,6 @@ export default function Footer() {
                             >
                                 <Files size={15} /> Policies
                             </Link>
-
-                            <Link
-                                href="/vacc/about-us"
-                                className="flex items-center gap-2 hover:opacity-50"
-                            >
-                                <Info size={15} /> About Us
-                            </Link>
                         </nav>
                     </div>
                 </div>

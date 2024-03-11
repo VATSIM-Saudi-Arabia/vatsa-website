@@ -35,6 +35,7 @@ import {
     Shield,
     Files,
     Info,
+    MessageCircleHeart,
 } from "lucide-react";
 
 export default function MainNav() {
@@ -121,17 +122,17 @@ export default function MainNav() {
                             </Link>
                         </DropdownMenuItem>
 
+                        <DropdownMenuItem asChild>
+                            <Link href="/atc/feedback" className="flex items-center gap-2">
+                                <MessageCircleHeart size={15} />
+                                Feedback
+                            </Link>
+                        </DropdownMenuItem>
+
                         {/* <DropdownMenuItem asChild>
                             <Link href="/pilots/training" className="flex items-center gap-2">
                                 <BaggageClaim size={15} />
                                 Visit / Transfer
-                            </Link>
-                        </DropdownMenuItem>
-
-                        <DropdownMenuItem asChild>
-                            <Link href="/pilots/training" className="flex items-center gap-2">
-                                <MessageCircleHeart size={15} />
-                                Feedback
                             </Link>
                         </DropdownMenuItem> */}
                     </DropdownMenuContent>
@@ -154,12 +155,6 @@ export default function MainNav() {
                         <DropdownMenuItem asChild>
                             <Link href="/vacc/policies" className="flex items-center gap-2">
                                 <Files size={15} /> Policies
-                            </Link>
-                        </DropdownMenuItem>
-
-                        <DropdownMenuItem asChild>
-                            <Link href="/vacc/about-us" className="flex items-center gap-2">
-                                <Info size={15} /> About Us
                             </Link>
                         </DropdownMenuItem>
                     </DropdownMenuContent>
@@ -283,6 +278,18 @@ export default function MainNav() {
                                         </DrawerClose>
                                     </DropdownMenuItem>
 
+                                    <DropdownMenuItem asChild>
+                                        <DrawerClose asChild>
+                                            <Link
+                                                href="/atc/feedback"
+                                                className="flex items-center gap-2"
+                                            >
+                                                <MessageCircleHeart size={15} />
+                                                Feedback
+                                            </Link>
+                                        </DrawerClose>
+                                    </DropdownMenuItem>
+
                                     {/* <DropdownMenuItem asChild>
                                         <DrawerClose asChild>
                                             <Link
@@ -291,18 +298,6 @@ export default function MainNav() {
                                             >
                                                 <BaggageClaim size={15} />
                                                 Visit / Transfer
-                                            </Link>
-                                        </DrawerClose>
-                                    </DropdownMenuItem>
-
-                                    <DropdownMenuItem asChild>
-                                        <DrawerClose asChild>
-                                            <Link
-                                                href="/pilots/training"
-                                                className="flex items-center gap-2"
-                                            >
-                                                <MessageCircleHeart size={15} />
-                                                Feedback
                                             </Link>
                                         </DrawerClose>
                                     </DropdownMenuItem> */}
@@ -335,17 +330,6 @@ export default function MainNav() {
                                                 className="flex items-center gap-2"
                                             >
                                                 <Files size={15} /> Policies
-                                            </Link>
-                                        </DrawerClose>
-                                    </DropdownMenuItem>
-
-                                    <DropdownMenuItem asChild>
-                                        <DrawerClose asChild>
-                                            <Link
-                                                href="/vacc/about-us"
-                                                className="flex items-center gap-2"
-                                            >
-                                                <Info size={15} /> About Us
                                             </Link>
                                         </DrawerClose>
                                     </DropdownMenuItem>

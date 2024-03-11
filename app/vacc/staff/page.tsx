@@ -46,6 +46,7 @@ export default function vACCStaff() {
                                 <TableHead className="w-[20%]">Contact</TableHead>
                             </TableRow>
                         </TableHeader>
+                        
                         <TableBody>
                             {staff.map((member, index) => (
                                 <TableRow key={index}>
