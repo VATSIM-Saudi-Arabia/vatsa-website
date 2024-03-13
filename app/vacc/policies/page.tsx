@@ -37,13 +37,15 @@ export default function vACCPolicies() {
                                     <h2 className="text-xl">{policy.name}</h2>
                                 </div>
 
-                                <Link
-                                    href="/assets/files/policies/GDPR.pdf"
+                                <a
+                                    href={policy.link}
+                                    target="_blank"
+                                    rel="noreferrer noopener"
                                     className={cn(buttonVariants({ variant: "secondary" }), "flex items-center gap-2")}
                                 >
                                     View
                                     <Eye size={15} />
-                                </Link>
+                                </a>
                             </CardHeader>
                         </Card>
                     ))}

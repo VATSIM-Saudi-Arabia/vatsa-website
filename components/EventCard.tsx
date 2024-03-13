@@ -11,7 +11,7 @@ export default function EventCard({ link, title, type, date, image_url }: Event)
             rel="noreferrer noopener"
             className="hover:opacity-80 transition-opacity ease-in-out"
         >
-            <Card className="dark w-[75vw] md:w-[25vw] overflow-hidden">
+            <Card className="w-[75vw] md:w-[25vw] overflow-hidden">
                 <CardContent className="p-0">
                     <Image
                         src={image_url}

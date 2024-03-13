@@ -9,6 +9,10 @@ export type SiteConfig = {
             mena: string;
             saudi: string;
         };
+        pilot_training: {
+            pilot: string;
+            instructor: string;
+        };
     };
     policies: {
         name: string;

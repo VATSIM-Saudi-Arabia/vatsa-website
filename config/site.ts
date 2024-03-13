@@ -23,9 +23,16 @@ const siteConfig: SiteConfig = {
     },
 
     // Policy files
-    policies: [{ name: "01/2023 - GDPR Policy", link: "https://cdn.vatsimsa.com/files/gdpr.pdf" },
-    {name: "01/2024 - Code of Conduct Policy", link: "https://cdn.vatsimsa.com/files/SAU_POL%20_COC_01-2024%20.pdf"}],
-    
+    policies: [
+        {
+            name: "01/2023 - GDPR Policy",
+            link: "https://cdn.vatsimsa.com/files/gdpr.pdf",
+        },
+        {
+            name: "01/2024 - Code of Conduct Policy",
+            link: "https://cdn.vatsimsa.com/files/SAU_POL%20_COC_01-2024%20.pdf",
+        },
+    ],
 
     // Staff list
     staff: [

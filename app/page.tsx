@@ -124,6 +124,7 @@ export default async function Home() {
                                             <CardHeader>
                                                 <h2 className="text-4xl text-vacc-green">The Mission</h2>
                                             </CardHeader>
+
                                             <CardContent>
                                                 <p>
                                                     The objective of Saudi Arabia vACC is to provide regular, high
@@ -139,11 +140,13 @@ export default async function Home() {
                                             </CardContent>
                                         </Card>
                                     </CarouselItem>
+
                                     <CarouselItem className="w-full flex justify-center items-center">
                                         <Card>
                                             <CardHeader>
                                                 <h2 className="text-4xl text-vacc-green">The Goal</h2>
                                             </CardHeader>
+
                                             <CardContent>
                                                 <p>
                                                     Our goal is to become the one of the most active vACC on the network
@@ -155,11 +158,13 @@ export default async function Home() {
                                             </CardContent>
                                         </Card>
                                     </CarouselItem>
+
                                     <CarouselItem className="w-full flex justify-center items-center">
                                         <Card>
                                             <CardHeader>
                                                 <h2 className="text-4xl text-vacc-green">Relations</h2>
                                             </CardHeader>
+
                                             <CardContent>
                                                 <p>
                                                     The Saudi Arabia Virtual Area Control Center ( vACC ) is the
@@ -170,11 +175,13 @@ export default async function Home() {
                                             </CardContent>
                                         </Card>
                                     </CarouselItem>
+
                                     <CarouselItem className="w-full flex justify-center items-center">
                                         <Card>
                                             <CardHeader>
                                                 <h2 className="text-4xl text-vacc-green">Airspace Coverage</h2>
                                             </CardHeader>
+
                                             <CardContent>
                                                 <p>
                                                     In Saudi Arabia vACC, the Saudi Arabian airspace is controlled upto
@@ -184,11 +191,13 @@ export default async function Home() {
                                             </CardContent>
                                         </Card>
                                     </CarouselItem>
+
                                     <CarouselItem className="w-full flex justify-center items-center">
                                         <Card>
                                             <CardHeader>
                                                 <h2 className="text-4xl text-vacc-green">Responsibilities</h2>
                                             </CardHeader>
+
                                             <CardContent>
                                                 <p>
                                                     Responsible for the area covered by the following Flight Information
@@ -206,11 +215,13 @@ export default async function Home() {
                                             </CardContent>
                                         </Card>
                                     </CarouselItem>
+
                                     <CarouselItem className="w-full flex justify-center items-center">
                                         <Card>
                                             <CardHeader>
                                                 <h2 className="text-4xl text-vacc-green">Getting In Touch</h2>
                                             </CardHeader>
+
                                             <CardContent>
                                                 <p>
                                                     VATSIM Saudi Arabia is always reachable via our support email
@@ -224,7 +235,9 @@ export default async function Home() {
                                         </Card>
                                     </CarouselItem>
                                 </CarouselContent>
+
                                 <CarouselPrevious />
+
                                 <CarouselNext />
                             </Carousel>
                         </div>
