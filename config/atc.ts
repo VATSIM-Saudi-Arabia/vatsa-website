@@ -367,6 +367,14 @@ const atcConfig: ATCConfig = {
                 gnd: Approval.Training,
             },
         },
+        {
+            cid: 1593704,
+            positions: {
+                del: Approval.Training,
+                gnd: Approval.Training,
+                twr: Approval.Training,
+            },
+        },
     ],
 
     // Inactive atc members
