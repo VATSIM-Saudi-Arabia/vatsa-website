@@ -68,7 +68,12 @@ export default async function PilotTraining() {
 
             <section className="bg-background">
                 <div className="container flex flex-col md:flex-row justify-center gap-6 py-10">
-                    <a href="https://forms.gle/qiabbcaRgCYfg62d6" target="_blank" rel="noreferrer noopener">
+                    <a
+                        href={SiteConfig.links.pilot_training.pilot}
+                        target="_blank"
+                        rel="noreferrer noopener"
+                        className="basis-1/2"
+                    >
                         <Card className="relative overflow-hidden">
                             <div className="absolute inset-0 flex items-center justify-center opacity-0 hover:opacity-100 hover:bg-black/75">
                                 <p className="text-6xl text-center text-white">Apply Here!</p>
@@ -92,13 +97,20 @@ export default async function PilotTraining() {
 
                             <CardContent>
                                 <p>
-                                     Are you looking to elevate your virtual flying experience new heights? Do you want to immerse yourself in a realistic and engaging virtual aviation environment? If so, we have something exciting in store for you!
+                                    Are you looking to elevate your virtual flying experience new heights? Do you want
+                                    to immerse yourself in a realistic and engaging virtual aviation environment? If so,
+                                    we have something exciting in store for you!
                                 </p>
                             </CardContent>
                         </Card>
                     </a>
 
-                    <a href= "https://forum.vatsim.net/t/vacancy-flight-instructor-saudi-arabian-vacc/5057" target="_blank" rel="noreferrer noopener">
+                    <a
+                        href={SiteConfig.links.pilot_training.instructor}
+                        target="_blank"
+                        rel="noreferrer noopener"
+                        className=" basis-1/2"
+                    >
                         <Card className="relative overflow-hidden">
                             <div className="absolute inset-0 flex items-center justify-center opacity-0 hover:opacity-100 hover:bg-black/75">
                                 <p className="text-6xl text-center text-white">Apply Here!</p>
@@ -200,10 +212,11 @@ export default async function PilotTraining() {
 
                                         <CardContent>
                                             <p>
-                                            The Saudi Pilot Training Program is currently under development and is not 
-                                            yet recognized as an authorized training organization (ATO) by VATSIM. 
-                                            It is expected to begin operations in the Third Quarter of 2024. 
-                                            We are diligently working towards establishing a high-quality training program.
+                                                The Saudi Pilot Training Program is currently under development and is
+                                                not yet recognized as an authorized training organization (ATO) by
+                                                VATSIM. It is expected to begin operations in the Third Quarter of 2024.
+                                                We are diligently working towards establishing a high-quality training
+                                                program.
                                             </p>
                                         </CardContent>
                                     </Card>

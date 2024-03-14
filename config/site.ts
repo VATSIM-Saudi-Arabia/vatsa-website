@@ -21,8 +21,8 @@ const siteConfig: SiteConfig = {
             saudi: "https://discord.com/invite/p9yn5rXjU2",
         },
         pilot_training: {
-            pilot: "",
-            instructor: "",
+            pilot: "https://forum.vatsim.net/t/vacancy-flight-instructor-saudi-arabian-vacc/5057",
+            instructor: "https://forum.vatsim.net/t/vacancy-flight-instructor-saudi-arabian-vacc/5057",
         },
     },
 
