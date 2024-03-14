@@ -100,7 +100,7 @@ export default async function PilotTraining() {
                         </Card>
                     </a>
 
-                    <a href={SiteConfig.links.pilot_training.instructor} target="_blank" rel="noreferrer noopener">
+                    <a href= "https://forum.vatsim.net/t/vacancy-flight-instructor-saudi-arabian-vacc/5057" target="_blank" rel="noreferrer noopener">
                         <Card className="relative overflow-hidden">
                             <div className="absolute inset-0 flex items-center justify-center opacity-0 hover:opacity-100 hover:bg-black/75">
                                 <p className="text-6xl text-center text-white">Apply Here!</p>
