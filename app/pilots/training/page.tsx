@@ -92,9 +92,7 @@ export default async function PilotTraining() {
 
                             <CardContent>
                                 <p>
-                                Are you looking to elevate your virtual flying experience to new heights? 
-                                Do you want to immerse yourself in a realistic and engaging virtual aviation environment? 
-                                If so, we have something exciting in store for you!
+                                     Are you looking to elevate your virtual flying experience to new heights? Do you want to immerse yourself in a realistic and engaging virtual aviation environment? If so, we have something exciting in store for you!
                                 </p>
                             </CardContent>
                         </Card>
