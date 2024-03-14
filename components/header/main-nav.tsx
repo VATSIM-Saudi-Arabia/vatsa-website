@@ -119,12 +119,12 @@ export default function MainNav() {
                             </Link>
                         </DropdownMenuItem>
 
-                        <DropdownMenuItem asChild>
+                        {/* <DropdownMenuItem asChild>
                             <Link href="/atc/feedback" className="flex items-center gap-2">
                                 <MessageCircleHeart size={15} />
                                 Feedback
                             </Link>
-                        </DropdownMenuItem>
+                        </DropdownMenuItem> */}
 
                         {/* <DropdownMenuItem asChild>
                             <Link href="/pilots/training" className="flex items-center gap-2">
@@ -266,14 +266,14 @@ export default function MainNav() {
                                         </DrawerClose>
                                     </DropdownMenuItem>
 
-                                    <DropdownMenuItem asChild>
+                                    {/* <DropdownMenuItem asChild>
                                         <DrawerClose asChild>
                                             <Link href="/atc/feedback" className="flex items-center gap-2">
                                                 <MessageCircleHeart size={15} />
                                                 Feedback
                                             </Link>
                                         </DrawerClose>
-                                    </DropdownMenuItem>
+                                    </DropdownMenuItem> */}
 
                                     {/* <DropdownMenuItem asChild>
                                         <DrawerClose asChild>
