@@ -87,14 +87,14 @@ export default async function PilotTraining() {
                             </CardContent>
 
                             <CardHeader>
-                                <CardTitle>Want to become an pilot?</CardTitle>
+                                <CardTitle>Want to become a pilot?</CardTitle>
                             </CardHeader>
 
                             <CardContent>
                                 <p>
-                                    Are you a flight instructor with a passion for teaching and a commitment to safety?
-                                    Do you have experience in both flight training and ground instruction? If so, we
-                                    want to hear from you!
+                                Are you looking to elevate your virtual flying experience to new heights? 
+                                Do you want to immerse yourself in a realistic and engaging virtual aviation environment? 
+                                If so, we have something exciting in store for you!
                                 </p>
                             </CardContent>
                         </Card>
