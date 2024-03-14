@@ -20,6 +20,10 @@ const siteConfig: SiteConfig = {
             mena: "https://discord.com/invite/Hvxm5Ky",
             saudi: "https://discord.com/invite/p9yn5rXjU2",
         },
+        pilot_training: {
+            pilot: "",
+            instructor: "",
+        },
     },
 
     // Policy files

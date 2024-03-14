@@ -1,3 +1,4 @@
+import SiteConfig from "@/config/site";
 import Image from "next/image";
 import Divider from "@/components/ui/divider";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -67,7 +68,7 @@ export default async function PilotTraining() {
 
             <section className="bg-background">
                 <div className="container flex flex-col md:flex-row justify-center gap-6 py-10">
-                    <a href="https://google.com" target="_blank" rel="noreferrer noopener">
+                    <a href={SiteConfig.links.pilot_training.pilot} target="_blank" rel="noreferrer noopener">
                         <Card className="relative overflow-hidden">
                             <div className="absolute inset-0 flex items-center justify-center opacity-0 hover:opacity-100 hover:bg-black/75">
                                 <p className="text-6xl text-center text-white">Apply Here!</p>
@@ -86,7 +87,7 @@ export default async function PilotTraining() {
                             </CardContent>
 
                             <CardHeader>
-                                <CardTitle>Want to become an instructor?</CardTitle>
+                                <CardTitle>Want to become an pilot?</CardTitle>
                             </CardHeader>
 
                             <CardContent>
@@ -99,7 +100,7 @@ export default async function PilotTraining() {
                         </Card>
                     </a>
 
-                    <a href="https://google.com" target="_blank" rel="noreferrer noopener">
+                    <a href={SiteConfig.links.pilot_training.instructor} target="_blank" rel="noreferrer noopener">
                         <Card className="relative overflow-hidden">
                             <div className="absolute inset-0 flex items-center justify-center opacity-0 hover:opacity-100 hover:bg-black/75">
                                 <p className="text-6xl text-center text-white">Apply Here!</p>
