@@ -145,7 +145,7 @@ export default function MainNav() {
                     
                     <DropdownMenuContent>
                     <DropdownMenuItem asChild>
-                            <Link href="https://hayya.vatsim.me" className="flex items-center gap-2">
+                            <Link href="https://hayya.vatsim.me/SAU" className="flex items-center gap-2">
                                 <Landmark size={15} /> HQ
                             </Link>
                         </DropdownMenuItem>
