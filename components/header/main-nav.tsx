@@ -33,6 +33,7 @@ import {
     Navigation,
     Building2,
     Shield,
+    Landmark,
     Files,
     Info,
     MessageCircleHeart,
@@ -141,8 +142,16 @@ export default function MainNav() {
                             <Building2 size={15} /> vACC
                         </Button>
                     </DropdownMenuTrigger>
-
+                    
                     <DropdownMenuContent>
+                    <DropdownMenuItem asChild>
+                            <Link href="https://hayya.vatsim.me" className="flex items-center gap-2">
+                                <Landmark size={15} /> HQ
+                            </Link>
+                        </DropdownMenuItem>
+
+                        <DropdownMenuSeparator />
+                        
                         <DropdownMenuItem asChild>
                             <Link href="/vacc/staff" className="flex items-center gap-2">
                                 <Shield size={15} /> Staff
@@ -154,6 +163,7 @@ export default function MainNav() {
                                 <Files size={15} /> Policies
                             </Link>
                         </DropdownMenuItem>
+
                     </DropdownMenuContent>
                 </DropdownMenu>
             </div>
