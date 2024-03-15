@@ -22,11 +22,7 @@ export default function Header() {
     }, []);
 
     return (
-        <header
-            className={cn("fixed w-full transition ease-in-out z-10", {
-                "bg-background": scrolled,
-            })}
-        >
+        <header className={cn("fixed w-full transition ease-in-out z-10", { "bg-background": scrolled })}>
             <MainNav />
         </header>
     );

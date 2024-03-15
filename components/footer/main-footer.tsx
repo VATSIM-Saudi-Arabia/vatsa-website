@@ -14,6 +14,7 @@ import {
     Shield,
     Files,
     Info,
+    Landmark,
 } from "lucide-react";
 
 export default function Footer() {
@@ -108,6 +109,15 @@ export default function Footer() {
                         <Separator />
 
                         <nav className="flex flex-col">
+                            <a
+                                href="https://hayya.vatsim.me/SAU"
+                                target="_blank"
+                                rel="noreferrer noopener"
+                                className="flex items-center gap-2 hover:opacity-50"
+                            >
+                                <Landmark size={15} /> HQ
+                            </a>
+
                             <Link href="/vacc/staff" className="flex items-center gap-2 hover:opacity-50">
                                 <Shield size={15} /> Staff
                             </Link>

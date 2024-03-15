@@ -142,16 +142,21 @@ export default function MainNav() {
                             <Building2 size={15} /> vACC
                         </Button>
                     </DropdownMenuTrigger>
-                    
+
                     <DropdownMenuContent>
-                    <DropdownMenuItem asChild>
-                            <Link href="https://hayya.vatsim.me/SAU" className="flex items-center gap-2">
+                        <DropdownMenuItem asChild>
+                            <a
+                                href="https://hayya.vatsim.me/SAU"
+                                target="_blank"
+                                rel="noreferrer noopener"
+                                className="flex items-center gap-2"
+                            >
                                 <Landmark size={15} /> HQ
-                            </Link>
+                            </a>
                         </DropdownMenuItem>
 
                         <DropdownMenuSeparator />
-                        
+
                         <DropdownMenuItem asChild>
                             <Link href="/vacc/staff" className="flex items-center gap-2">
                                 <Shield size={15} /> Staff
@@ -163,7 +168,6 @@ export default function MainNav() {
                                 <Files size={15} /> Policies
                             </Link>
                         </DropdownMenuItem>
-
                     </DropdownMenuContent>
                 </DropdownMenu>
             </div>
@@ -307,6 +311,21 @@ export default function MainNav() {
                                 </DropdownMenuTrigger>
 
                                 <DropdownMenuContent>
+                                    <DropdownMenuItem asChild>
+                                        <DrawerClose asChild>
+                                            <a
+                                                href="https://hayya.vatsim.me/SAU"
+                                                target="_blank"
+                                                rel="noreferrer noopener"
+                                                className="flex items-center gap-2"
+                                            >
+                                                <Landmark size={15} /> HQ
+                                            </a>
+                                        </DrawerClose>
+                                    </DropdownMenuItem>
+
+                                    <DropdownMenuSeparator />
+
                                     <DropdownMenuItem asChild>
                                         <DrawerClose asChild>
                                             <Link href="/vacc/staff" className="flex items-center gap-2">
