@@ -69,11 +69,11 @@ const siteConfig: SiteConfig = {
             email: "N/A",
         },
         {
-            cid: 0,
+            cid: 1404713,
             code: "ACCSA32",
             title: "Operations Director",
-            name: "Vacant - Open",
-            email: "N/A",
+            name: "Dallon Pereira ",
+            email: "operations@vatimsa.com",
         },
         {
             cid: 1323685,
