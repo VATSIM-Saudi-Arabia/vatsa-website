@@ -29,6 +29,10 @@ const siteConfig: SiteConfig = {
     // Policy files
     policies: [
         {
+            name: "01/2024 - ATC Training Policy",
+            link: "https://cdn.vatsimsa.com/files/SAU_POL%20_ATP_01-2024.pdf",
+        },
+        {
             name: "01/2023 - GDPR Policy",
             link: "https://cdn.vatsimsa.com/files/gdpr.pdf",
         },
