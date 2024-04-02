@@ -108,11 +108,11 @@ const siteConfig: SiteConfig = {
             email: "N/A",
         },
         {
-            cid: 1514902,
+            cid: 0,
             code: "ACCSA6",
             title: "Technical Director",
-            name: "Bilal Baig",
-            email: "tech@vatsimsa.com",
+            name: "Vacant - Open",
+            email: "N/A",
         },
         {
             cid: 1614633,
