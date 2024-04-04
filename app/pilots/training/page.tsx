@@ -35,7 +35,7 @@ export default async function PilotTraining() {
             </section>
 
             <section className="bg-background">
-                <div className="container flex flex-col gap-4 py-10">
+                <div className="container flex flex-col gap-4 my-10">
                     <h1 className="text-4xl text-vacc-green">Looking for flight training?</h1>
 
                     <p>
@@ -67,7 +67,7 @@ export default async function PilotTraining() {
             </section>
 
             <section className="bg-background">
-                <div className="container flex flex-col md:flex-row justify-center gap-6 py-10">
+                <div className="container flex flex-col md:flex-row justify-center gap-6 my-10">
                     <a
                         href={SiteConfig.links.pilot_training.pilot}
                         target="_blank"
@@ -159,7 +159,7 @@ export default async function PilotTraining() {
             </section>
 
             <section className="bg-background">
-                <div className="container flex flex-col items-center gap-8 py-12 h-[80vh] md:h-[50vh]">
+                <div className="container flex flex-col items-center gap-8 h-[80vh] md:h-[50vh]">
                     <div className="flex flex-col justify-center items-center h-full">
                         <Carousel opts={{ loop: true }} orientation="vertical" className="w-full">
                             <CarouselContent className="h-[60vh] md:h-[30vh] items-start">

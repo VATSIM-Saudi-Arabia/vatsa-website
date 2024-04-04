@@ -28,7 +28,7 @@ export default function vACCStaff() {
             </section>
 
             <section className="bg-background">
-                <div className="container py-10">
+                <div className="container my-10">
                     <Table>
                         <TableHeader>
                             <TableRow>

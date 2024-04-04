@@ -122,7 +122,7 @@ export default async function ATCRoster() {
             </section>
 
             <section className="bg-background">
-                <div className="container flex flex-col gap-2 py-10">
+                <div className="container flex flex-col gap-2 my-10">
                     <ATCLegend />
                     <Tabs defaultValue="resident" className="w-full">
                         <TabsList>

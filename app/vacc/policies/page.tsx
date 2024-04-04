@@ -28,7 +28,7 @@ export default function vACCPolicies() {
             </section>
 
             <section className="bg-background">
-                <div className="container flex flex-col gap-4 py-10">
+                <div className="container flex flex-col gap-4 my-10">
                     {policies.map((policy, index) => (
                         <Card key={index}>
                             <CardHeader className="flex flex-row justify-between items-center p-4">

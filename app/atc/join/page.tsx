@@ -30,7 +30,7 @@ export default async function ATCJoin() {
             </section>
 
             <section className="bg-background">
-                <div className="container flex flex-col gap-4 py-10">
+                <div className="container flex flex-col gap-4 my-10">
                     <h2 className="text-4xl text-vacc-green">Ready to join?</h2>
                     <p>
                         Once your account region for VATSIM is set to Europe, Middle East, and Africa (EMEA), you can
