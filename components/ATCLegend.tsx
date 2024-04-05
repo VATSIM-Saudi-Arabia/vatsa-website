@@ -88,7 +88,12 @@ export default function ATCLegend() {
                                 Solo Validation
                                 <p className="text-sm opacity-50">
                                     More Information{" "}
-                                    <a href="https://staff.vatsim.me/solos" className="underline hover:opacity-25">
+                                    <a
+                                        href="https://staff.vatsim.me/solos"
+                                        target="_blank"
+                                        rel="noreferrer noopener"
+                                        className="underline hover:opacity-25"
+                                    >
                                         here
                                     </a>
                                     .
