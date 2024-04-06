@@ -391,6 +391,7 @@ const atcConfig: ATCConfig = {
             positions: {
                 del: Approval.Training,
                 gnd: Approval.Training,
+                twr: Approval.Training,
                 app: Approval.Training,
             },
         },
@@ -399,6 +400,7 @@ const atcConfig: ATCConfig = {
             positions: {
                 del: Approval.Training,
                 gnd: Approval.Training,
+                twr: Approval.Training,
                 app: Approval.Training,
             },
         },
