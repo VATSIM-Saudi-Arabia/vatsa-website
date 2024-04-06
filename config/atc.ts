@@ -70,6 +70,18 @@ const atcConfig: ATCConfig = {
             last_name: "Abdullah",
             rating_id: Rating.C1,
         },
+        {
+            cid: 1648952,
+            first_name: "Abdulrahman",
+            last_name: "Alamoodi",
+            rating_id: Rating.S3,
+        },
+        {
+            cid: 1427130,
+            first_name: "Taha",
+            last_name: "Khan",
+            rating_id: Rating.C1,
+        },
     ],
 
     // ATC roster approvals
@@ -130,7 +142,7 @@ const atcConfig: ATCConfig = {
             positions: {
                 del: Approval.Approved,
                 gnd: Approval.Approved,
-                twr: Approval.Training,
+                twr: Approval.Solo,
             },
         },
         {
@@ -372,6 +384,22 @@ const atcConfig: ATCConfig = {
             positions: {
                 del: Approval.Training,
                 gnd: Approval.Training,
+            },
+        },
+        {
+            cid: 1648952,
+            positions: {
+                del: Approval.Training,
+                gnd: Approval.Training,
+                app: Approval.Training,
+            },
+        },
+        {
+            cid:  1427130,
+            positions: {
+                del: Approval.Training,
+                gnd: Approval.Training,
+                app: Approval.Training,
             },
         },
     ],
