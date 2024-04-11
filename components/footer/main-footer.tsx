@@ -23,7 +23,7 @@ export default function Footer() {
             <div className="container hidden sm:block">
                 <Separator />
 
-                <div className="flex flex-wrap justify-around my-10">
+                <div className="flex flex-wrap justify-around py-10">
                     <div className="flex flex-col gap-2 items-center">
                         <Image src="/assets/logo.png" alt="Logo" width={80} height={80} />
                         <p>Copyright © 2024 VATSIM Saudi Arabia</p>
