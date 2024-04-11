@@ -12,7 +12,8 @@ export async function sendFeedbackForm(values: z.infer<typeof feedbackFormSchema
     try {
         const info = await transporter.sendMail({
             from: "no-reply@vatsimsa.com",
-            to: "director@vatsimsa.com, hr@vatsimsa.com, tech@vatsimsa.com",
+            to: "ats@vatsimsa.com",
+            cc: "director@vatsimsa.com, hr@vatsimsa.com, tech@vatsimsa.com",
             subject: "Feedback Form",
             html: `
             <div style="background-color: #09090b; color: white; padding: 1rem; border-radius: 0.5rem">
