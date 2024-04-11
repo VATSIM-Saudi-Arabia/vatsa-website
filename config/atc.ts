@@ -82,6 +82,12 @@ const atcConfig: ATCConfig = {
             last_name: "Khan",
             rating_id: Rating.C1,
         },
+        {
+            cid: 1662347,
+            first_name: "Tarek",
+            last_name: "Najib",
+            rating_id: Rating.S2,
+        },
     ],
 
     // ATC roster approvals
@@ -402,6 +408,14 @@ const atcConfig: ATCConfig = {
                 gnd: Approval.Training,
                 twr: Approval.Training,
                 app: Approval.Training,
+            },
+        },
+        {
+            cid:  1662347,
+            positions: {
+                del: Approval.Training,
+                gnd: Approval.Training,
+                twr: Approval.Training,
             },
         },
     ],
