@@ -402,7 +402,7 @@ const atcConfig: ATCConfig = {
             },
         },
         {
-            cid:  1427130,
+            cid: 1427130,
             positions: {
                 del: Approval.Training,
                 gnd: Approval.Training,
@@ -411,7 +411,7 @@ const atcConfig: ATCConfig = {
             },
         },
         {
-            cid:  1662347,
+            cid: 1662347,
             positions: {
                 del: Approval.Training,
                 gnd: Approval.Training,

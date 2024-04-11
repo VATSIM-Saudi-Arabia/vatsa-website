@@ -5,6 +5,7 @@ import type { Metadata, Viewport } from "next";
 import SiteConfig from "@/config/site";
 import Header from "@/components/header/main-header";
 import Footer from "@/components/footer/main-footer";
+import { Toaster } from "@/components/ui/sonner";
 import { Mulish } from "next/font/google";
 import { cn } from "@/lib/utils";
 
@@ -44,8 +45,12 @@ export default function RootLayout({
         <html lang="en">
             <body className={cn("dark", mulish.className)}>
                 <Header />
+
                 {children}
+
                 <Footer />
+
+                <Toaster richColors />
             </body>
         </html>
     );

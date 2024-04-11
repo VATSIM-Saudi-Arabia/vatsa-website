@@ -10,10 +10,10 @@ import {
     PlaneTakeoff,
     TowerControl,
     Users,
+    MessageCircleHeart,
     Building2,
     Shield,
     Files,
-    Info,
     Landmark,
 } from "lucide-react";
 
@@ -84,21 +84,14 @@ export default function Footer() {
                                 <Users size={15} /> ATC Roster
                             </Link>
 
-                            {/* <Link
-                            href="/pilots/training"
-                            className="flex items-center gap-2 hover:opacity-50"
-                        >
-                            <BaggageClaim size={15} />
-                            Visit / Transfer
-                        </Link>
+                            <Link href="/atc/feedback" className="flex items-center gap-2 hover:opacity-50">
+                                <MessageCircleHeart size={15} /> ATC Feedback
+                            </Link>
 
-                        <Link
-                            href="/pilots/training"
-                            className="flex items-center gap-2 hover:opacity-50"
-                        >
-                            <MessageCircleHeart size={15} />
-                            Feedback
-                        </Link> */}
+                            {/* <Link href="/pilots/training" className="flex items-center gap-2 hover:opacity-50">
+                                <BaggageClaim size={15} />
+                                Visit / Transfer
+                            </Link> */}
                         </nav>
                     </div>
                     <div className="flex flex-col gap-4">
