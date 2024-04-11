@@ -75,7 +75,7 @@ export default async function PilotTraining() {
                         className="basis-1/2"
                     >
                         <Card className="relative overflow-hidden">
-                            <div className="absolute inset-0 flex items-center justify-center opacity-0 hover:opacity-100 hover:bg-black/75">
+                            <div className="absolute inset-0 flex items-center justify-center opacity-0 hover:opacity-100 hover:bg-black/75 transition-opacity ease-in-out">
                                 <p className="text-6xl text-center text-white">Apply Here!</p>
                             </div>
 
@@ -112,7 +112,7 @@ export default async function PilotTraining() {
                         className=" basis-1/2"
                     >
                         <Card className="relative overflow-hidden">
-                            <div className="absolute inset-0 flex items-center justify-center opacity-0 hover:opacity-100 hover:bg-black/75">
+                            <div className="absolute inset-0 flex items-center justify-center opacity-0 hover:opacity-100 hover:bg-black/75 transition-opacity ease-in-out">
                                 <p className="text-6xl text-center text-white">Apply Here!</p>
                             </div>
 
