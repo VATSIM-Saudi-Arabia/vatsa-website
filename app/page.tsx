@@ -260,7 +260,7 @@ export default async function Home() {
                             href="https://vatsim.net/"
                             target="_blank"
                             rel="noreferrer noopener"
-                            className="hover:opacity-50"
+                            className="hover:opacity-50 transition-opacity ease-in-out"
                         >
                             <Image src="/assets/images/vatsim.png" alt="VATSIM Logo" width={300} height={0} />
                         </a>
