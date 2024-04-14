@@ -9,7 +9,7 @@ export default function EventCard({ link, title, type, date, image_url }: Event)
             href={link}
             target="_blank"
             rel="noreferrer noopener"
-            className="hover:opacity-80 transition-opacity ease-in-out"
+            className="hover:opacity-80 transition-opacity"
         >
             <Card className="w-[75vw] md:w-[25vw] overflow-hidden">
                 <CardContent className="p-0">
