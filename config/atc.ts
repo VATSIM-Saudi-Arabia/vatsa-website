@@ -361,7 +361,7 @@ const atcConfig: ATCConfig = {
             positions: {
                 del: Approval.Approved,
                 gnd: Approval.Approved,
-                twr: Approval.Solo,
+                twr: Approval.Approved,
             },
         },
         {
