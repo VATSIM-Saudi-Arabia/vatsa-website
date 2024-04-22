@@ -144,14 +144,6 @@ const atcConfig: ATCConfig = {
             },
         },
         {
-            cid: 1514902,
-            positions: {
-                del: Approval.Approved,
-                gnd: Approval.Approved,
-                twr: Approval.Solo,
-            },
-        },
-        {
             cid: 1409617,
             positions: {
                 del: Approval.Approved,
@@ -421,7 +413,7 @@ const atcConfig: ATCConfig = {
     ],
 
     // Inactive atc members
-    inactive: [1366935, 1564275, 1327111, 1526156, 1495940, 1492904, 1259821],
+    inactive: [1366935, 1564275, 1327111, 1526156, 1495940, 1492904, 1259821, 1514902],
 };
 
 export default atcConfig;
