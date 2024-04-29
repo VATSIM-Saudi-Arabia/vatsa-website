@@ -380,8 +380,8 @@ const atcConfig: ATCConfig = {
         {
             cid: 1593704,
             positions: {
-                del: Approval.Training,
-                gnd: Approval.Training,
+                del: Approval.Approved,
+                gnd: Approval.Approved,
             },
         },
         {
