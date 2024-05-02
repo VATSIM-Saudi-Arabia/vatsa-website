@@ -346,6 +346,8 @@ const atcConfig: ATCConfig = {
             positions: {
                 del: Approval.Approved,
                 gnd: Approval.Approved,
+                twr: Approval.Training,
+                app: Approval.Training,
             },
         },
         {
@@ -405,9 +407,16 @@ const atcConfig: ATCConfig = {
         {
             cid: 1662347,
             positions: {
-                del: Approval.Training,
-                gnd: Approval.Training,
-                twr: Approval.Training,
+                del: Approval.Approved,
+                gnd: Approval.Approved,
+                twr: Approval.Approved,
+            },
+        },
+        {
+            cid: 1574371,
+            positions: {
+                del: Approval.Approved,
+                gnd: Approval.Approved,
             },
         },
     ],
