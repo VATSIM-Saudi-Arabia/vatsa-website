@@ -44,7 +44,7 @@ const atcConfig: ATCConfig = {
             cid: 1495440,
             first_name: "Tshepo",
             last_name: "Lekata",
-            rating_id: Rating.S3,
+            rating_id: Rating.C1,
         },
         {
             cid: 1496933,
