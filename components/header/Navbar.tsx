@@ -35,18 +35,17 @@ import {
     Shield,
     Landmark,
     Files,
-    Info,
     MessageCircleHeart,
 } from "lucide-react";
 
-export default function MainNav() {
+export default function Navbar() {
     return (
         <div className="container flex items-center justify-between h-28">
             <Link href="/">
                 <Image src="/assets/logo.png" alt="Logo" width={80} height={80} priority />
             </Link>
 
-            <div className="hidden sm:flex items-center gap-2">
+            <div className="hidden items-center gap-2 sm:flex">
                 <Link href="/" className={cn(buttonVariants({ variant: "link" }), "flex items-center gap-2")}>
                     <Home size={15} /> Home
                 </Link>

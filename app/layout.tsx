@@ -3,11 +3,10 @@ import "./globals.css";
 import type { Metadata, Viewport } from "next";
 
 import SiteConfig from "@/config/site";
-import Header from "@/components/header/main-header";
-import Footer from "@/components/footer/main-footer";
+import Header from "@/components/header/Header";
+import Footer from "@/components/footer/Footer";
 import { Toaster } from "@/components/ui/sonner";
 import { Mulish } from "next/font/google";
-import { cn } from "@/lib/utils";
 
 const mulish = Mulish({ subsets: ["latin"] });
 
@@ -43,7 +42,7 @@ export default function RootLayout({
 }>) {
     return (
         <html lang="en">
-            <body className={cn("dark", mulish.className)}>
+            <body className={mulish.className}>
                 <Header />
 
                 {children}
