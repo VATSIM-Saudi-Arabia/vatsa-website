@@ -11,6 +11,12 @@ const atcConfig: ATCConfig = {
             rating_id: Rating.I1,
         },
         {
+            cid: 1597249,
+            first_name: "Salman",
+            last_name: "Sikandar",
+            rating_id: Rating.C1,
+        },
+        {
             cid: 1120988,
             first_name: "Fatih Mutlu",
             last_name: "Timurcioglu",
@@ -92,6 +98,16 @@ const atcConfig: ATCConfig = {
 
     // ATC roster approvals
     approvals: [
+        {
+            cid: 1597249,
+            positions: {
+                del: Approval.Approved,
+                gnd: Approval.Approved,
+                twr: Approval.Approved,
+                app: Approval.Approved,
+                ctr: Approval.Approved,
+            },
+        },
         {
             cid: 1702604,
             positions: {
