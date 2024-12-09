@@ -76,10 +76,30 @@ const atcConfig: ATCConfig = {
             last_name: "Najib",
             rating_id: Rating.S2,
         },
+        {
+            cid: 1702604,
+            first_name: "Mustaeen",
+            last_name: "Hossain",
+            rating_id: Rating.S2,
+        },
+        {
+            cid: 1702382,
+            first_name: "Majid",
+            last_name: "Bin Theniah",
+            rating_id: Rating.S2,
+        },
     ],
 
     // ATC roster approvals
     approvals: [
+        {
+            cid: 1702604,
+            positions: {
+                del: Approval.Approved,
+                gnd: Approval.Approved,
+                twr: Approval.Approved
+            },
+        },
         {
             cid: 1344871,
             positions: {
