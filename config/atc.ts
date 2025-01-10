@@ -94,6 +94,18 @@ const atcConfig: ATCConfig = {
             last_name: "Bin Theniah",
             rating_id: Rating.S2,
         },
+        {
+            cid: 1797446,
+            first_name: "Dhiaeddine",
+            last_name: "Keskes",
+            rating_id: Rating.S2,
+        },
+        {
+            cid: 1505454,
+            first_name: "Mehdi",
+            last_name: "Azzouzi",
+            rating_id: Rating.S2,
+        },
     ],
 
     // ATC roster approvals
@@ -457,6 +469,10 @@ const atcConfig: ATCConfig = {
         {
             cid: 1205178,
             positions: {
+                del: Approval.Training,
+                gnd: Approval.Training,
+                twr: Approval.Training,
+                app: Approval.Training,    
             },
         },
         {
@@ -471,6 +487,22 @@ const atcConfig: ATCConfig = {
             positions: {
                 del: Approval.Approved,
                 gnd: Approval.Approved,
+            },
+        },
+        {
+            cid: 1797446,
+            positions: {
+                del: Approval.Approved,
+                gnd: Approval.Approved,
+                twr: Approval.Approved,
+            },
+        },
+        {
+            cid: 1505454,
+            positions: {
+                del: Approval.Approved,
+                gnd: Approval.Approved,
+                twr: Approval.Approved,
             },
         },
     ],
