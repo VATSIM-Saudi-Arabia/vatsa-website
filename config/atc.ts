@@ -106,12 +106,28 @@ const atcConfig: ATCConfig = {
             last_name: "Azzouzi",
             rating_id: Rating.S2,
         },
+        {
+            cid: 1707224,
+            first_name: "Ian",
+            last_name: "Bijl",
+            rating_id: Rating.S2,
+        },
     ],
 
     // ATC roster approvals
     approvals: [
         {
             cid: 1597249,
+            positions: {
+                del: Approval.Approved,
+                gnd: Approval.Approved,
+                twr: Approval.Approved,
+                app: Approval.Approved,
+                ctr: Approval.Approved,
+            },
+        },
+        {
+            cid: 1707224,
             positions: {
                 del: Approval.Approved,
                 gnd: Approval.Approved,
@@ -394,6 +410,7 @@ const atcConfig: ATCConfig = {
                 del: Approval.Approved,
                 gnd: Approval.Approved,
                 twr: Approval.Approved,
+                app: Approval.Training,
             },
         },
         {
@@ -455,7 +472,7 @@ const atcConfig: ATCConfig = {
             positions: {
                 del: Approval.Approved,
                 gnd: Approval.Approved,
-                twr: Approval.Solo,
+                twr: Approval.Approved,
             },
         },
         {
@@ -463,7 +480,7 @@ const atcConfig: ATCConfig = {
             positions: {
                 del: Approval.Approved,
                 gnd: Approval.Approved,
-                twr: Approval.Solo,
+                twr: Approval.Approved,
             },
         },
         {
@@ -480,6 +497,7 @@ const atcConfig: ATCConfig = {
             positions: {
                 del: Approval.Approved,
                 gnd: Approval.Approved,
+                twr: Approval.Training,
             },
         },
         {
@@ -505,10 +523,17 @@ const atcConfig: ATCConfig = {
                 twr: Approval.Approved,
             },
         },
+        {
+            cid: 1722615,
+            positions: {
+                del: Approval.Training,
+                gnd: Approval.Training,
+            },
+        },
     ],
 
     // Inactive atc members
-    inactive: [1366935, 1564275, 1327111, 1526156, 1495940, 1492904, 1259821, 1514902, 1262584, 1328668, 1465729, 1493532, 1581461, 1610046, 1621439 ],
+    inactive: [1366935, 1612975, 1744576, 1564275, 1327111, 1526156, 1495940, 1492904, 1259821, 1514902, 1262584, 1328668, 1465729, 1493532, 1581461, 1610046, 1621439 ],
 };
 
 export default atcConfig;
