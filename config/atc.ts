@@ -535,6 +535,20 @@ const atcConfig: ATCConfig = {
                 gnd: Approval.Approved,
             },
         },
+        {
+            cid: 1855454,
+            positions: {
+                del: Approval.Approved,
+                gnd: Approval.Approved,
+            },
+        },
+        {
+            cid: 1779782,
+            positions: {
+                del: Approval.Approved,
+                gnd: Approval.Approved,
+            },
+        },
     ],
 
     // Inactive atc members
