@@ -52,9 +52,9 @@ const siteConfig: SiteConfig = {
             email: "director@vatsimsa.com",
         },
         {
-            cid: 1670345,
-            code: "SAUOPS1",
-            title: "Operations Team Lead",
+            cid: 1650436,
+            code: "ACCSA32",
+            title: "Operations Director",
             name: "Muhammed Sinada",
             email: "muhammed.sinada@vatsimsa.com",
         },
