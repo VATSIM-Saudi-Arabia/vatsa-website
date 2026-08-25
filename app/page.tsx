@@ -1,6 +1,5 @@
-import type { EventResponse } from "@/types/api";
-
 import SiteConfig from "@/config/site";
+import RadarHero from "@/components/map/RadarHero";
 import Typer from "@/components/Typer";
 import EventCard from "@/components/EventCard";
 import Divider from "@/components/ui/divider";
@@ -9,34 +8,19 @@ import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
+import { fetchSaudiEvents } from "@/lib/hq";
 
 import Discord from "@/public/assets/icons/discord.svg";
 
-// Fetch events from the VATSIM API
-async function getEvents(): Promise<EventResponse> {
-    const res = await fetch("https://my.vatsim.net/api/v2/events/latest", {
-        headers: { Accept: "application/json" },
-        next: { revalidate: 3600 },
-    });
-
-    var response: EventResponse = await res.json();
-
-    if (!res.ok) throw new Error("Failed to fetch events: " + JSON.stringify(response));
-
-    // Filter those events that includes an airport that is in Saudi Arabia
-    response.data = response.data.filter((event) => event.airports.some((event) => event.icao.startsWith("OE")));
-
-    return response;
-}
-
 export default async function Home() {
-    const events = await getEvents();
+    const events = await fetchSaudiEvents();
 
     return (
         <main className="flex flex-col">
-            <section className="h-[80vh] bg-[url('/assets/backgrounds/main.png')] bg-cover bg-no-repeat bg-center">
-                <div className="h-full bg-black/30">
-                    <div className="container flex flex-col justify-center h-full">
+            <section className="relative h-[80vh] overflow-hidden bg-[#04120a]">
+                <RadarHero />
+                <div className="relative h-full">
+                    <div className="container flex flex-col justify-center h-full [text-shadow:_0_2px_10px_rgba(0,0,0,0.75)]">
                         <div className="text-4xl sm:text-6xl">
                             <h1>Welcome to </h1>
                             <h1 className="font-bold text-vacc-green">VATSIM Saudi Arabia</h1>
@@ -87,19 +71,23 @@ export default async function Home() {
                     <h2 className="text-4xl">Upcoming Events</h2>
 
                     <div className="flex flex-wrap justify-center gap-8">
-                        {events.data?.length ? (
-                            events.data.map((event, index) => (
+                        {events.length ? (
+                            events.map((event) => (
                                 <EventCard
-                                    key={index}
-                                    link={event.link}
-                                    title={event.name}
-                                    date={new Date(event.start_time).toLocaleDateString("en-US", {
-                                        year: "numeric",
-                                        month: "long",
-                                        day: "numeric",
-                                    })}
-                                    type={event.type}
-                                    image_url={event.banner}
+                                    key={event.id}
+                                    link={event.link ?? undefined}
+                                    title={event.title}
+                                    date={
+                                        event.startIso
+                                            ? new Date(event.startIso).toLocaleDateString("en-US", {
+                                                  year: "numeric",
+                                                  month: "long",
+                                                  day: "numeric",
+                                              })
+                                            : "TBA"
+                                    }
+                                    type="Event"
+                                    image_url={event.imageUrl ?? undefined}
                                 />
                             ))
                         ) : (

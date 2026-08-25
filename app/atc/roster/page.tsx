@@ -1,5 +1,6 @@
-import { type RosterMember, Position, Approval } from "@/types";
-import { type MembersResponse, Rating } from "@/types/api";
+import { type RosterMember, Position } from "@/types";
+import { Rating } from "@/types/api";
+import { fetchSaudiRoster, type RosterController } from "@/lib/hq";
 
 import ATCConfig from "@/config/atc";
 import Divider from "@/components/ui/divider";
@@ -8,7 +9,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import { Badge } from "@/components/ui/badge";
 
-import { Users, CheckCircle2, XCircle, GraduationCap } from "lucide-react";
+import { Users, CheckCircle2, XCircle } from "lucide-react";
 
 const ratings = [
     { short: "SUS", long: "Suspended", color: "bg-gray-500" },
@@ -26,83 +27,68 @@ const ratings = [
     { short: "ADM", long: "Administrator", color: "bg-purple-500" },
 ];
 
-// Fetch roster from the VATSIM API
-async function getRoster(): Promise<RosterMember[]> {
-    const initial_res = await fetch("https://api.vatsim.net/v2/orgs/subdivision/SAU?limit=1", {
-        headers: {
-            Accept: "application/json",
-            "X-API-Key": process.env.VATSIM_CORE_API_KEY,
-        },
-        next: { revalidate: 3600 },
-    });
+const RATING_ID: Record<string, number> = {
+    SUS: 0, OBS: 1, S1: 2, S2: 3, S3: 4, C1: 5, C2: 6, C3: 7, I1: 8, I2: 9, I3: 10, SUP: 11, ADM: 12,
+};
 
-    // Get an initial response for the count of total members
-    var initial: MembersResponse = await initial_res.json();
+type RowMember = RosterMember & { positions: string[]; solo: string[] };
 
-    if (!initial_res.ok) throw new Error("Failed to fetch initial roster: " + JSON.stringify(initial));
+const byCid = (a: RowMember, b: RowMember) => a.cid - b.cid;
 
-    // Use the count from the initial response to fetch all members
-    const count = initial.count;
+const hasApproval = (m: RowMember) => m.positions.length > 0 || m.solo.length > 0;
 
-    const res = await fetch(`https://api.vatsim.net/v2/orgs/subdivision/SAU?limit=${count}`, {
-        headers: {
-            Accept: "application/json",
-            "X-API-Key": process.env.VATSIM_CORE_API_KEY,
-        },
-        next: { revalidate: 3600 },
-    });
-
-    const response: MembersResponse = await res.json();
-
-    if (!res.ok) throw new Error("Failed to fetch roster: " + JSON.stringify(response));
-
-    // Filter the response for useful data.
-    const { inactive } = ATCConfig;
-    const items: RosterMember[] = response.items
-        ?.filter((item) => !inactive.includes(item.id) && item.rating > Rating.OBS)
-        .map((item) => ({
-            cid: item.id,
-            first_name: item.name_first,
-            last_name: item.name_last,
-            rating_id: item.rating,
-            rating: ratings[item.rating],
-        }));
-
-    return items;
+function mapController(c: RosterController): RowMember {
+    const parts = String(c.name || "").trim().split(/\s+/);
+    const first_name = parts.shift() || "";
+    const last_name = parts.join(" ");
+    const rating_id = RATING_ID[String(c.rating || "").toUpperCase()] ?? Rating.OBS;
+    return {
+        cid: Number(c.cid),
+        first_name,
+        last_name,
+        rating_id,
+        rating: ratings[rating_id],
+        positions: (c.positions || []).map((p) => String(p).toUpperCase()),
+        solo: (c.solo || []).map((p) => String(p).toUpperCase()),
+    };
 }
+
+async function getRoster(): Promise<RowMember[]> {
+    const { home } = await fetchSaudiRoster();
+    const { inactive } = ATCConfig;
+    return (home || [])
+        .filter((c) => {
+            const rid = RATING_ID[String(c.rating || "").toUpperCase()] ?? Rating.OBS;
+            return !inactive.includes(Number(c.cid)) && rid > Rating.OBS;
+        })
+        .map(mapController)
+        .filter(hasApproval)
+        .sort(byCid);
+}
+
+async function getVisiting(): Promise<RowMember[]> {
+    const { visiting } = await fetchSaudiRoster();
+    return (visiting || []).map(mapController).filter(hasApproval).sort(byCid);
+}
+
+const POSITION_LABEL: Record<Position, string> = {
+    [Position.DEL]: "DEL",
+    [Position.GND]: "GND",
+    [Position.TWR]: "TWR",
+    [Position.APP]: "APP",
+    [Position.CTR]: "CTR",
+};
+
+const generatePositionSymbol = (member: RowMember, position: Position): JSX.Element => {
+    const label = POSITION_LABEL[position];
+    if (member.solo.includes(label)) return <Badge className="mx-auto bg-green-500 animate-pulse">Solo</Badge>;
+    if (member.positions.includes(label)) return <CheckCircle2 className="mx-auto text-green-500" />;
+    return <XCircle className="mx-auto text-red-500" />;
+};
 
 export default async function ATCRoster() {
     const residents = await getRoster();
-    const { visitors } = ATCConfig;
-    const { approvals } = ATCConfig;
-
-    const filteredVisitors = visitors?.map((item) => ({
-        cid: item.cid,
-        first_name: item.first_name,
-        last_name: item.last_name,
-        rating_id: item.rating_id,
-        rating: ratings[item.rating_id],
-    }));
-
-    // Generate a symbol for the given member and the position
-    const generateSymbol = (item: RosterMember, position: Position): JSX.Element => {
-        const approval = approvals.find((e) => e.cid == item.cid);
-
-        if (!approval && item.rating_id >= 5) return <CheckCircle2 className="mx-auto text-green-500" />;
-        if (approval?.positions[position] == Approval.Approved)
-            return <CheckCircle2 className="mx-auto text-green-500" />;
-        if (approval?.positions[position] == Approval.ApprovedT1) return <Badge className="bg-green-500">T1</Badge>;
-        if (approval?.positions[position] == Approval.ApprovedT2) return <Badge className="bg-green-500">T2</Badge>;
-        if (approval?.positions[position] == Approval.ApprovedT1T2)
-            return <Badge className="bg-green-500">T1 + T2</Badge>;
-        if (approval?.positions[position] == Approval.Training)
-            return <GraduationCap className="mx-auto text-yellow-500" />;
-        if (approval?.positions[position] == Approval.TrainingT1) return <Badge className="bg-yellow-500">T1</Badge>;
-        if (approval?.positions[position] == Approval.TrainingT2) return <Badge className="bg-yellow-500">T2</Badge>;
-        if (approval?.positions[position] == Approval.Solo) return <Badge className="bg-orange-500">Solo</Badge>;
-
-        return <XCircle className="mx-auto text-red-500" />;
-    };
+    const visitors = await getVisiting();
 
     return (
         <main className="flex flex-col">
@@ -136,7 +122,6 @@ export default async function ATCRoster() {
                                         <TableHeader>
                                             <TableRow>
                                                 <TableHead className="w-0">CID</TableHead>
-                                                <TableHead className="w-[15%]">Name</TableHead>
                                                 <TableHead className="w-0">Rating</TableHead>
                                                 <TableHead>Title</TableHead>
                                                 <TableHead className="text-center">DEL</TableHead>
@@ -150,7 +135,6 @@ export default async function ATCRoster() {
                                             {residents.map((member, index) => (
                                                 <TableRow key={index}>
                                                     <TableCell>{member.cid}</TableCell>
-                                                    <TableCell>{member.first_name + " " + member.last_name}</TableCell>
                                                     <TableCell>
                                                         <Badge className={member.rating.color}>
                                                             {member.rating.short}
@@ -158,19 +142,19 @@ export default async function ATCRoster() {
                                                     </TableCell>
                                                     <TableCell>{member.rating.long}</TableCell>
                                                     <TableCell className="text-center">
-                                                        {generateSymbol(member, Position.DEL)}
+                                                        {generatePositionSymbol(member, Position.DEL)}
                                                     </TableCell>
                                                     <TableCell className="text-center">
-                                                        {generateSymbol(member, Position.GND)}
+                                                        {generatePositionSymbol(member, Position.GND)}
                                                     </TableCell>
                                                     <TableCell className="text-center">
-                                                        {generateSymbol(member, Position.TWR)}
+                                                        {generatePositionSymbol(member, Position.TWR)}
                                                     </TableCell>
                                                     <TableCell className="text-center">
-                                                        {generateSymbol(member, Position.APP)}
+                                                        {generatePositionSymbol(member, Position.APP)}
                                                     </TableCell>
                                                     <TableCell className="text-center">
-                                                        {generateSymbol(member, Position.CTR)}
+                                                        {generatePositionSymbol(member, Position.CTR)}
                                                     </TableCell>
                                                 </TableRow>
                                             ))}
@@ -190,7 +174,6 @@ export default async function ATCRoster() {
                                         <TableHeader>
                                             <TableRow>
                                                 <TableHead className="w-0">CID</TableHead>
-                                                <TableHead className="w-[15%]">Name</TableHead>
                                                 <TableHead className="w-0">Rating</TableHead>
                                                 <TableHead>Title</TableHead>
                                                 <TableHead className="text-center">DEL</TableHead>
@@ -201,10 +184,9 @@ export default async function ATCRoster() {
                                             </TableRow>
                                         </TableHeader>
                                         <TableBody>
-                                            {filteredVisitors.map((member, index) => (
+                                            {visitors.map((member, index) => (
                                                 <TableRow key={index}>
                                                     <TableCell>{member.cid}</TableCell>
-                                                    <TableCell>{member.first_name + " " + member.last_name}</TableCell>
                                                     <TableCell>
                                                         <Badge className={member.rating.color}>
                                                             {member.rating.short}
@@ -212,19 +194,19 @@ export default async function ATCRoster() {
                                                     </TableCell>
                                                     <TableCell>{member.rating.long}</TableCell>
                                                     <TableCell className="text-center">
-                                                        {generateSymbol(member, Position.DEL)}
+                                                        {generatePositionSymbol(member, Position.DEL)}
                                                     </TableCell>
                                                     <TableCell className="text-center">
-                                                        {generateSymbol(member, Position.GND)}
+                                                        {generatePositionSymbol(member, Position.GND)}
                                                     </TableCell>
                                                     <TableCell className="text-center">
-                                                        {generateSymbol(member, Position.TWR)}
+                                                        {generatePositionSymbol(member, Position.TWR)}
                                                     </TableCell>
                                                     <TableCell className="text-center">
-                                                        {generateSymbol(member, Position.APP)}
+                                                        {generatePositionSymbol(member, Position.APP)}
                                                     </TableCell>
                                                     <TableCell className="text-center">
-                                                        {generateSymbol(member, Position.CTR)}
+                                                        {generatePositionSymbol(member, Position.CTR)}
                                                     </TableCell>
                                                 </TableRow>
                                             ))}
