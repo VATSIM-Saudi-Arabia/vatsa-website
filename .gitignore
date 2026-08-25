@@ -34,3 +34,6 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Local EuroScope sector pack (used to generate map data, never commit)
+/OEJD 2512/

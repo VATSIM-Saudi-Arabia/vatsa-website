@@ -1,9 +1,9 @@
 export type Event = {
-    link: string;
+    link?: string;
     title: string;
     date: string;
     type: string;
-    image_url: string;
+    image_url?: string;
 };
 
 export type Staff = {
